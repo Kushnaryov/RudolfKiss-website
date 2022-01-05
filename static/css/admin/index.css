@@ -1,0 +1,43 @@
+.container {
+    max-width: calc(100vw - 100px)
+}
+
+.rectangle {
+  position: relative;
+  display: flex;
+  justify-content: center; 
+  width: calc((100vw - 130px)/5);
+  height: calc((100vw - 130px)/5);
+  overflow: hidden;
+  color: aliceblue;
+}
+.container-videos {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #myVideo {
+      z-index: -1;
+      width:100%;
+      height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #myVideo {
+      z-index: -1;
+      width:auto;
+      height: 100%;
+  }
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: black;
+  z-index: 1;
+
+}

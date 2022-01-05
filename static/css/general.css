@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.main-background {
+    position: relative;
+    display: flex;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100vw;
+    height: 75vh;
+    overflow: hidden;
+}
+
+.wrapper-v {
+    display: flex;
+    flex-direction: column;
+}
+
+video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+
+.Rudolf {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100px;
+    color: azure;
+    position: absolute;
+    left: 80px;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    transform: scale(1.8)
+}
+
+.Director {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100px;
+    color: azure;
+    position: absolute;
+    right: 80px;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-end;
+    transform: scale(1.8)
+}
+
+.pink {
+    color: #fdbebe;
+}
+
+.cross {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    transform: translateY(-53%);
+}
+
+#cross {
+    height: 25vw;
+    width: auto;
+}
+
+.wrapper-nav {
+    display: flex;
+    height: 25vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+    align-items: center;
+    width: 35%;
+    justify-content: space-around;
+}
+
+.links-left {
+    margin-left: 20px;
+}
+
+.links-right {
+    margin-right: 20px;
+}
+
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}

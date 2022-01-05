@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'ambidexter';
+    src: url(Ambidexter_Regular.otf);
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url(Roboto-Bold.ttf);
+}
+
+.font-ambidexter {
+    font-family: 'ambidexter';
+    line-height: 70px;
+}
+
+.font-roboto {
+    font-family: 'roboto';
+    line-height: 40px;
+}
+
+.fs-pos-b {
+    font-size: 49px;
+}
+
+.fs-pos-s {
+    font-size: 26px;
+}
+
+.fs-name-b {
+    font-size: 12vh;
+}
+
+.fs-name-s {
+    font-size: 7vh;
+}
+
+.fs-nav-links {
+    text-transform: uppercase;
+    font-size: 20px;
+}

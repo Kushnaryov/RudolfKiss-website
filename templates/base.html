@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/general.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/fonts.css') }}">
+        <meta charset="UTF-8">        
+        {% block header%}
+        {% endblock %}
+        {% block header_extra%}
+        {% endblock %}
+    </head>
+
+    <body>
+        {% block content %}
+        {% endblock %}
+        {% block content_extra %}
+        {% endblock %}    
+    </body>
+
+</html>

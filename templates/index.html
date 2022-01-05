@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <div class = 'main-background'>
+        <div class="wrapper-v">
+            <video src="{{ background }}" autoplay muted loop id='background-v'></video>
+        </div>
+        <div class='Rudolf font-ambidexter'>
+            <span class="fs-name-s pink">RUDOLF</span>
+            <span class="fs-name-b">KISS</span>
+        </div>
+        
+        <div class='Director font-roboto'>
+            <span class="fs-pos-b">DIRECTOR/</span>
+            <span class="fs-pos-s">CINEMATOGRAPHER</span>
+        </div>
+    </div>
+    <div class="cross">
+        <img src="{{ url_for('static', filename='img/cross.webp') }}" id="cross">
+    </div>
+    <div class='wrapper-nav'>
+        <ul class='nav links-left'>
+            <li class="font-roboto fs-nav-links">New Stuff</li>
+            <li class="font-roboto fs-nav-links">Commercials</li>
+            <li class="font-roboto fs-nav-links">Cinema</li>
+        </ul>
+        <ul class='nav links-right'>
+            <li class="font-roboto fs-nav-links">Music Videos</li>
+            <li class="font-roboto fs-nav-links">Documantaries</li>
+            <li class="font-roboto fs-nav-links">Short Films</li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block videos %}
+{% endblock %}
+
