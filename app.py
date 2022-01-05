@@ -12,8 +12,8 @@ import os
 
 app = Flask(__name__)
 
-app.config['DATABASE_FILE'] = settings.DATABASE_FILE
-app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{settings.DATABASE_FILE}'
+# app.config['DATABASE_FILE'] = settings.DATABASE_FILE
+# app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{settings.DATABASE_FILE}'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = settings.SQLALCHEMY_TRACK_MODIFICATIONS
 app.config['SECRET_KEY'] = settings.SECRET_KEY
 
@@ -44,10 +44,14 @@ admin.add_view(ProjectModelView(ProjectModel, db.session))
 
 
 if __name__ == "__main__":
+    debug = True
 
     if not os.path.exists(settings.db_path):
         with app.app_context():
             db.drop_all()
             db.create_all()
-    
-    app.run(debug=True, use_reloader=True)
+
+    if not debug:
+        app.config['SQLALCHEMY_DATABASE_URI'] = settings.SQLALCHEMY_DATABASE_URI
+
+    app.run(debug=debug, use_reloader=debug)
