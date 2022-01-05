@@ -9,5 +9,6 @@ class ProjectModel(db.Model):
     order_num = db.Column(db.Integer, nullable=False)
     name = db.Column(db.String(30), nullable=False)
     video_url = db.Column(db.String(50), nullable=False)
+    category = db.Column(db.String(20), nullable=False)
     slug = db.Column(db.String(30))
     

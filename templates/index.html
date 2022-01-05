@@ -6,7 +6,8 @@
 {% block content %}
     <div class = 'main-background'>
         <div class="wrapper-v">
-            <video src="{{ background }}" autoplay muted loop id='background-v'></video>
+            <video src="{{ url_for('static', filename=background) }}" autoplay muted loop id='background-v'></video>
+            <span style="color: white; z-index: 10;">{{ test_text }}</span>
         </div>
         <div class='Rudolf font-ambidexter'>
             <span class="fs-name-s pink">RUDOLF</span>
