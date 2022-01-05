@@ -7,7 +7,7 @@ def home():
     try:   
         projects = ProjectModel.query.filter_by(category='NEW STUFF')
         test_text = request
-        bg_url ='/media/content/' + ProjectModel.query.filter_by(category='background').one().video_url
+        bg_url ='/media/content/' + 'background.mp4'#ProjectModel.query.filter_by(category='background').one().video_url
         return render_template("index.html", projects=projects, background=bg_url, test_text=test_text)
     except NoResultFound:
         abort(404) 
