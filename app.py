@@ -17,6 +17,15 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = settings.SQLALCHEMY_TRACK_MODIFICATIONS
 app.config['SECRET_KEY'] = settings.SECRET_KEY
 
+ENV = 'heroku'
+
+if ENV == 'local':
+    app.config['SQLALCHEMY_DATABASE_URI'] = settings.DEV_DB_URI
+    app.debug = True
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = settings.PROD_DB_URI
+    app.debug = False
+
 db.init_app(app)
 
 def register_views(views_to_register):
@@ -38,20 +47,15 @@ views_to_register = [
 register_views(views_to_register)
 
 admin = Admin(app, template_mode='bootstrap4', index_view=HomeView())
-
-
 admin.add_view(ProjectModelView(ProjectModel, db.session))
 
 
+
 if __name__ == "__main__":
-    debug = True
+    # if not os.path.exists(settings.db_path):
+    #     with app.app_context():
+    #         db.drop_all()
+    #         db.create_all()
 
-    if not os.path.exists(settings.db_path):
-        with app.app_context():
-            db.drop_all()
-            db.create_all()
 
-    if not debug:
-        app.config['SQLALCHEMY_DATABASE_URI'] = settings.SQLALCHEMY_DATABASE_URI
-
-    app.run(debug=debug, use_reloader=debug)
+    app.run(use_reloader = True)
