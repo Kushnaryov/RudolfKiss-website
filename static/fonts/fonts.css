@@ -4,8 +4,8 @@
 }
 
 @font-face {
-    font-family: 'roboto';
-    src: url(Roboto-Bold.ttf);
+    font-family: 'acier';
+    src: url(AcierTextSolid.ttf);
 }
 
 .font-ambidexter {
@@ -13,8 +13,8 @@
     line-height: 70px;
 }
 
-.font-roboto {
-    font-family: 'roboto';
+.font-acier {
+    font-family: 'acier';
     line-height: 40px;
 }
 
@@ -37,4 +37,8 @@
 .fs-nav-links {
     text-transform: uppercase;
     font-size: 20px;
+}
+
+.fs-works-title {
+    font-size: 70px;
 }

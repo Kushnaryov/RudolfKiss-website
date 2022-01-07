@@ -1,12 +1,12 @@
 from flask import Flask
 from flask_admin import Admin
 
-import views
+import main_app.views as views
 from auth_app import views as auth_views
 
 from admin_app.models import ProjectModel, db
 from admin_app.views import ProjectModelView, HomeView
-import settings
+import main_app.settings as settings
 
 import os
 
@@ -17,7 +17,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = settings.SQLALCHEMY_TRACK_MODIFICATIONS
 app.config['SECRET_KEY'] = settings.SECRET_KEY
 
-ENV = 'heroku'
+# ENV = 'heroku'
+ENV = 'local'
 
 if ENV == 'local':
     app.config['SQLALCHEMY_DATABASE_URI'] = settings.DEV_DB_URI
