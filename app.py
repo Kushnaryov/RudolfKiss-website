@@ -14,8 +14,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = settings.SQLALCHEMY_TRACK_MODIFICATIONS
 app.config['SECRET_KEY'] = settings.SECRET_KEY
 
-# ENV = 'heroku'
-ENV = 'local'
+ENV = 'heroku'
+# ENV = 'local'
 
 if ENV == 'local':
     app.config['SQLALCHEMY_DATABASE_URI'] = settings.DEV_DB_URI
