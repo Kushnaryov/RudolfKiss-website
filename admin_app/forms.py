@@ -31,4 +31,4 @@ class ProjectForm(Form):
                                                  ('SHORT FILMS', 'SHORT FILMS'),
                                                  ('SHOWREEL', 'SHOWREEL'),
                                                  ('background', 'BACKGROUND')])
-    slug = StringField('Slug', validators=[InputRequired()])
+    # slug = StringField('Slug', validators=[InputRequired()])

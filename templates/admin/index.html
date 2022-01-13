@@ -2,19 +2,13 @@
 {% block head_css %}
 {{super()}}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/admin/index.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/general.css') }}">
 {% endblock %}
 {% block body %}
 <!-- CREATE NEW -->
     <!-- CREATED CARDS -->
 
-    <div class='container-videos'>
-        {% for project in projects %}
-        <div class = 'rectangle'>
-            <video src="{{url_for('static', filename='media/content/' + project.video_url)}}" autoplay muted loop></video>
-            <div class='text'>{{project.name}}</div>
-        </div>
-        {% endfor %}
-    </div>
+    <a href="{{ url_for('download') }}">Download project videos</a>
     
 
 {% endblock %}

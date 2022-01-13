@@ -28,4 +28,15 @@ class HomeView(AdminIndexView):
         # id = get_mdict_item_or_list(request.args, 'id')
         # model = self.get_one(id)
         projects = ProjectModel.query.all()
-        return self.render('admin/index.html', projects=projects)
+        works = []
+        for project in projects:
+            if project.name != None:
+                # v = Vimeo(project.video_url)
+                # metadata = v.metadata
+                # stream_240 = v.streams[0]
+                dic = {
+                    'name': project.name,
+                    # 'video_url': stream_240.direct_url
+                }
+                works.append(dic)
+        return self.render('admin/index.html', works=works)
