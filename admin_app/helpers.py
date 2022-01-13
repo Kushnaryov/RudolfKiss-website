@@ -37,8 +37,15 @@ def create_gif_png(url: str, path: str, filename: str, start: int, end: int):
     os.remove(f'{path}{filename}.mp4')
 
 def get_name(url: str):
-    name = prepare_name(Vimeo(url).metadata.title)
-    return name
+    return prepare_name(Vimeo(url).metadata.title)
 
 def get_embed_url(url: str):
     return 'https://player.vimeo.com/video/'+url[-9:]
+
+def delete_gif_png(path: str, filename: str):
+    os.remove(f'{path}{filename}.png')
+    os.remove(f'{path}{filename}.gif')
+
+def update_gif_png(url: str, path: str, old_filename: str, new_filename: str, start: int, end: int):
+    delete_gif_png(path, old_filename)
+    create_gif_png(url, path, new_filename, start, end)

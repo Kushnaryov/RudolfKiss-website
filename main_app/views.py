@@ -1,4 +1,4 @@
-from flask import abort, render_template, request, redirect
+from flask import abort, render_template, request
 from sqlalchemy.orm.exc import NoResultFound
 
 

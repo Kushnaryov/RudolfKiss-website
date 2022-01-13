@@ -18,8 +18,8 @@ class ProjectModel(db.Model):
 
 
 
-def process_videos():
-    projects = ProjectModel.query.filter_by(category='NEW STUFF')
+def fullfill_video_data():
+    projects = ProjectModel.query.all()
     for project in projects:
         if project.name == None:
                 

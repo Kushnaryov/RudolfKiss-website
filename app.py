@@ -5,7 +5,7 @@ from flask_admin import Admin
 import main_app.views as views
 from auth_app import views as auth_views
 
-from admin_app.models import ProjectModel, db, process_videos
+from admin_app.models import ProjectModel, db
 from admin_app.views import ProjectModelView, HomeView
 import main_app.settings as settings
 
@@ -38,7 +38,7 @@ def register_views(views_to_register):
 
 views_to_register = [
         ('/', 'home', views.home),
-        ('/download', 'download', process_videos),
+        # ('/download', 'download', process_videos),
         ('/login', 'login', auth_views.login, ['GET', 'POST']),
         ('/logout', 'logout', auth_views.logout)
                     ]
