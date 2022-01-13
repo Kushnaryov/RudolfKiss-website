@@ -3,6 +3,7 @@ cachelib==0.4.1
 certifi==2021.10.8
 charset-normalizer==2.0.10
 click==8.0.3
+decorator==4.4.2
 Flask==2.0.2
 Flask-Admin==1.5.8
 Flask-Migrate==3.1.0
@@ -12,14 +13,19 @@ Flask-SQLAlchemy==2.5.1
 greenlet==1.1.2
 gunicorn==20.1.0
 idna==3.3
+imageio==2.13.5
+imageio-ffmpeg==0.4.5
 importlib-metadata==4.10.0
 importlib-resources==5.4.0
 itsdangerous==2.0.1
 Jinja2==3.0.3
 Mako==1.1.6
 MarkupSafe==2.0.1
+moviepy==1.0.3
+numpy==1.22.0
 Pillow==8.4.0
 postgres==4.0
+proglog==0.1.9
 psycopg2-binary==2.9.3
 psycopg2-pool==1.1
 requests==2.27.1
