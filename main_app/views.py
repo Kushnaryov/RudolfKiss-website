@@ -1,15 +1,11 @@
 from flask import abort, render_template, request
 from sqlalchemy.orm.exc import NoResultFound
 
-
-from admin_app.models import ProjectModel
-
-
-
+from main_app.models import Works
 
 def home():
     try:   
-        projects = ProjectModel.query.filter_by(category='NEW STUFF')
+        projects = Works.query.filter_by(category='NEW STUFF')
         works = []
         for project in projects:
             if project.name != None:
@@ -22,7 +18,7 @@ def home():
                 }
                 works.append(dic)
         # test_text = projects[0].video_url
-        bg_url ='/media/content/' + 'background.mp4'#ProjectModel.query.filter_by(category='background').one().video_url
+        bg_url ='/media/content/' + 'background.mp4'#Works.query.filter_by(category='background').one().video_url
         return render_template("index.html", works=works, background=bg_url) #, test_text=test_text 
     except NoResultFound:
         abort(404) 

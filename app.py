@@ -1,12 +1,14 @@
 from flask import Flask
 from flask_admin import Admin
+from flask_login import LoginManager
+# from migrate import create_base_user
+# from flask_admin.contrib.sqla import ModelView
 # from main_app.migrate import migrate
 
 import main_app.views as views
 from auth_app import views as auth_views
-
-from admin_app.models import ProjectModel, db
-from admin_app.views import ProjectModelView, HomeView
+from main_app.models import Works, db, User
+from admin_app.views import WorksView, HomeView, UserView
 import main_app.settings as settings
 
 app = Flask(__name__)
@@ -14,8 +16,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = settings.SQLALCHEMY_TRACK_MODIFICATIONS
 app.config['SECRET_KEY'] = settings.SECRET_KEY
 
-ENV = 'heroku'
-# ENV = 'local'
+# ENV = 'heroku'
+ENV = 'local'
 
 if ENV == 'local':
     app.config['SQLALCHEMY_DATABASE_URI'] = settings.DEV_DB_URI
@@ -23,6 +25,7 @@ if ENV == 'local':
 else:
     app.config['SQLALCHEMY_DATABASE_URI'] = settings.PROD_DB_URI
     app.debug = False
+
 
 db.init_app(app)
 
@@ -45,10 +48,19 @@ views_to_register = [
 
 register_views(views_to_register)
 
+login = LoginManager(app)
 admin = Admin(app, template_mode='bootstrap4', index_view=HomeView())
-admin.add_view(ProjectModelView(ProjectModel, db.session))
+
+admin.add_view(WorksView(Works, db.session))
+admin.add_view(UserView(User, db.session))
+
+admin.add_link(auth_views.LogoutMenuLink(name='Logout', category='', url="/logout"))
+admin.add_link(auth_views.LoginMenuLink(name='Login', category='', url="/login"))
 
 
+@login.user_loader
+def load_user(user_id):
+    return User.query.get(user_id)
 
 if __name__ == "__main__":
     app.run(use_reloader = True)
