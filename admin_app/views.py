@@ -40,14 +40,17 @@ class WorksView(ModelView):
             self.session.add(model)
             self._on_model_change(form, model, True)
             # custom functionality
-            model.name = get_name(model.video_url)
-            model.video_embed = get_embed_url(model.video_url)
-            #
-            self.session.commit()
+
 
             # custom
-            create_gif_png(url=model.video_url, path=content_path, filename=model.name, start=2, end=7)
-
+            name = get_name(model.video_url)
+            embed_url = get_embed_url(model.video_url)
+            create_gif_png(url=model.video_url, path=content_path, filename=name, start=2, end=7)
+            model.name = name
+            model.video_embed = embed_url
+            #
+            self.session.commit()
+            
         except Exception as ex:
             if not self.handle_view_exception(ex):
                 flash(gettext('Failed to create record. %(error)s', error=str(ex)), 'error')

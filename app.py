@@ -40,8 +40,8 @@ def register_views(views_to_register):
         
 
 views_to_register = [
-        ('/', 'home', views.home),
-        # ('/download', 'download', process_videos),
+        ('/', 'home', views.home, ['GET', 'POST']),
+        ('/category=new-stuff', 'new-stuff', views.home),
         ('/login', 'login', auth_views.login, ['GET', 'POST']),
         ('/logout', 'logout', auth_views.logout)
                     ]

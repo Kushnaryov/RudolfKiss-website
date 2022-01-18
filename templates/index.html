@@ -4,6 +4,7 @@
 {% endblock %}
 
 {% block content %}
+    <!-- BACKGROUND -->
     <div class = 'main-background'>
         <div class="wrapper-v">
             <video class="background-v" src="{{ url_for('static', filename=background) }}" autoplay muted loop id='background-v'></video>
@@ -19,24 +20,28 @@
             <span class="fs-pos-s">CINEMATOGRAPHER</span>
         </div>
     </div>
+
+    <!-- NAVIGATION -->
     <div class="cross">
         <img src="{{ url_for('static', filename='img/cross.webp') }}" id="cross">
     </div>
-    <div class='wrapper-nav'>
-        <ul class='nav links-left'>
-            <li class="font-acier fs-nav-links">New Stuff</li>
-            <li class="font-acier fs-nav-links">Commercials</li>
-            <li class="font-acier fs-nav-links">Cinema</li>
-        </ul>
-        <ul class='nav links-right'>
-            <li class="font-acier fs-nav-links">Music Videos</li>
-            <li class="font-acier fs-nav-links">Documantaries</li>
-            <li class="font-acier fs-nav-links">Short Films</li>
-        </ul>
+    <div class='wrapper-nav' id="nav">
+        <form method="POST" class='nav links-left'>
+            <input class="font-acier fs-nav-links" type="submit" name="category" value="NEW STUFF">
+            <input class="font-acier fs-nav-links" type="submit" name="category" value="COMMERCIALS">
+            <input class="font-acier fs-nav-links" type="submit" name="category" value="CINEMA">
+        </form>
+        <form method="POST" class='nav links-right'>
+            <input class="font-acier fs-nav-links" type="submit" name="category" value="MUSIC VIDEOS">
+            <input class="font-acier fs-nav-links" type="submit" name="category" value="DOCUMENTARIES">
+            <input class="font-acier fs-nav-links" type="submit" name="category" value="SHORT FILMS">
+        </form>
     </div>
+
+    <!-- WORKS -->
     <div class="works-view">
         <div class="filter-title">
-            <span class="font-ambidexter fs-works-title">NEW STUFF</span>
+            <span class="font-ambidexter fs-works-title" id="content">{{ category }}</span>
         </div>
         <div class="works-container">
             {% for work in works %}

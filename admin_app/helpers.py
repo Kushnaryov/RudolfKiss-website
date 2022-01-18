@@ -2,6 +2,7 @@ import re
 import os
 from moviepy.editor import VideoFileClip
 from vimeo_downloader import Vimeo
+from flask import flash
 
 
 def prepare_name(string: str):
@@ -26,8 +27,11 @@ def clear_string_from_second_divider(string: str):
 
 def download_video(url: str, path: str):
     v = Vimeo(url)
-    name = prepare_name(v.metadata.title)
-    v.streams[0].download(download_directory=path, filename=name)
+    name = get_name(url)
+    try:
+        v.streams[0].download(download_directory=path, filename=name)
+    except:
+        flash("Cannot connect to the vimeo", category='error')
 
 def create_gif_png(url: str, path: str, filename: str, start: int, end: int):
     download_video(url, path)
@@ -37,14 +41,20 @@ def create_gif_png(url: str, path: str, filename: str, start: int, end: int):
     os.remove(f'{path}{filename}.mp4')
 
 def get_name(url: str):
-    return prepare_name(Vimeo(url).metadata.title)
+    try:
+        return prepare_name(Vimeo(url).metadata.title)
+    except:
+        raise ValueError('Video is not on the vimeo')
 
 def get_embed_url(url: str):
     return 'https://player.vimeo.com/video/'+url[-9:]
 
 def delete_gif_png(path: str, filename: str):
-    os.remove(f'{path}{filename}.png')
-    os.remove(f'{path}{filename}.gif')
+    try:
+        os.remove(f'{path}{filename}.png')
+        os.remove(f'{path}{filename}.gif')
+    except:
+        pass
 
 def update_gif_png(url: str, path: str, old_filename: str, new_filename: str, start: int, end: int):
     delete_gif_png(path, old_filename)
