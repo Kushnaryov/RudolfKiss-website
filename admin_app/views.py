@@ -1,3 +1,4 @@
+from flask.helpers import url_for
 from flask_login import current_user
 from flask_admin.contrib.sqla import ModelView
 from flask_admin import AdminIndexView, expose
@@ -17,7 +18,7 @@ class WorksView(ModelView):
     # accessability
     def is_accessible(self):
         return current_user.is_authenticated
-    def is_inaccessible(self):
+    def inaccessible_callback(self, name, **kwargs):
         return redirect('/login')
 
     form = ProjectForm
@@ -73,7 +74,7 @@ class WorksView(ModelView):
 class HomeView(AdminIndexView):
     def is_accessible(self):
         return current_user.is_authenticated
-    def is_inaccessible(self):
+    def inaccessible_callback(self, name, **kwargs):
         return redirect('/login')
 
     def is_visible(self):
@@ -87,7 +88,7 @@ class HomeView(AdminIndexView):
 class UserView(ModelView):
     def is_accessible(self):
         return current_user.is_authenticated
-    def is_inaccessible(self):
+    def inaccessible_callback(self, name, **kwargs):
         return redirect('/login')
 
     can_create = False
