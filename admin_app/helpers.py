@@ -36,7 +36,7 @@ def create_mp4(url: str, path: str, filename: str, usage: str,  start: int, end:
     download_video(url, path, quality=quality)
     print('downloaded')
     os.system(f'ffmpeg -ss {video_start} -to {video_end} -i {origin_file} -vcodec libx265 -an -b:v {bitrate} -c:v copy {result_file} -n')
-    print('converted')
+    print('converted to small one')
     os.remove(origin_file)
     print('origin removed')
 
