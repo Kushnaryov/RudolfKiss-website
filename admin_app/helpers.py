@@ -34,8 +34,11 @@ def create_mp4(url: str, path: str, filename: str, usage: str,  start: int, end:
         bitrate = '250k'
 
     download_video(url, path, quality=quality)
+    print('downloaded')
     os.system(f'ffmpeg -ss {video_start} -to {video_end} -i {origin_file} -vcodec libx265 -an -b:v {bitrate} -c:v copy {result_file} -n')
+    print('converted')
     os.remove(origin_file)
+    print('origin removed')
 
 def get_name(url: str):
     try:
@@ -60,7 +63,6 @@ def get_embed_url(url: str):
     return 'https://player.vimeo.com/video/'+url[-9:]
 
 def delete_mp4(path: str, filename: str, usage: str):
-
     try:
         os.remove(f'{path}{filename}_{usage}.mp4')
     except:
@@ -77,9 +79,10 @@ def upload_file_to_bucket(path: str, filename: str, usage: str):
     file_name = f'{path}{filename}_{usage}.mp4'
     object_name = f'{path}{filename}_{usage}.mp4'
     s3_client = start_s3_client()
-    response = s3_client.upload_file(file_name, S3_BUCKET, object_name)
+    s3_client.upload_file(file_name, S3_BUCKET, object_name)
+    print('uploaded')
     os.remove(file_name)
-    return response
+    print('removed from heroku')
 
 def delete_file_from_bucket(path: str, filename: str, usage: str):
     object_name = f'{path}{filename}_{usage}.mp4'
