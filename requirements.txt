@@ -1,4 +1,6 @@
 alembic==1.7.5
+boto3==1.20.39
+botocore==1.23.39
 cachelib==0.4.1
 certifi==2021.10.8
 charset-normalizer==2.0.10
@@ -21,6 +23,7 @@ importlib-metadata==4.10.0
 importlib-resources==5.4.0
 itsdangerous==2.0.1
 Jinja2==3.0.3
+jmespath==0.10.0
 Mako==1.1.6
 MarkupSafe==2.0.1
 moviepy==1.0.3
@@ -30,7 +33,11 @@ postgres==4.0
 proglog==0.1.9
 psycopg2-binary==2.9.3
 psycopg2-pool==1.1
+python-dateutil==2.8.2
+python-dotenv==0.19.2
 requests==2.27.1
+s3transfer==0.5.0
+six==1.16.0
 SQLAlchemy==1.4.29
 tqdm==4.62.3
 urllib3==1.26.7
