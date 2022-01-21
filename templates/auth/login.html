@@ -1,19 +1,16 @@
-{% extends 'base.html' %}
-{% block header %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
-{% endblock %}
-{% block content %}
-<div class="container">
-    <h1>Login as admin</h1>
-    <form action="#" method="POST">
-        <input type="text" name='username' placeholder="username" class="field" required>
-        <input type="password" name='password' placeholder="password" class="field" required>
-        <input type="submit" value="login" class="btn">
-    </form>
-    {% if failed %}
-    <div class="failed">
-        <a>Incorrect Username or Password</a>
-    </div>
-    {% endif %}	
-</div>
-{% endblock %}
+<body>
+    <div class="container">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
+        <img src="{{ url_for('static', filename='img/cross.webp') }}">
+        <form action="#" method="POST">
+            <input type="text" name='username' placeholder="username" class="field" required>
+            <input type="password" name='password' placeholder="password" class="field" required>
+            <input type="submit" value="login" class="btn">
+        </form>
+        {% if failed %}
+        <div class="failed">
+            <a>Incorrect Username or Password</a>
+        </div>
+        {% endif %}
+    </div>  
+</body>
