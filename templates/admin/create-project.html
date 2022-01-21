@@ -1,8 +1,15 @@
 {% extends 'admin/model/create.html' %}
-{% block access_control %}
-<button>log out</button>
+{% block brand %}
+<img src="{{ url_for('static', filename='img/cross.webp') }}">
 {% endblock %}
-{% block body %}
-    <h1>Create Project View</h1>
-    {{ super() }}
+{% block head_css %}
+{{super()}}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/admin/index.css') }}">
+{% endblock %}
+{% block page_body %}
+{{super()}}
+<div class='text'>
+    <a>*Uploading and processing video's can take around 2 minutes</a>
+</div>
+
 {% endblock %}

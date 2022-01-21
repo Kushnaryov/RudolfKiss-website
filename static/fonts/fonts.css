@@ -39,10 +39,12 @@
     font-size: 20px;
     background-color: inherit;
     border: 0;
+    color: white;
 }
 
 .fs-works-title {
     font-size: 70px;
+    color: white;
 }
 
 .fs-work-title-sm {

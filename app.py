@@ -7,8 +7,8 @@ from flask_login import LoginManager
 
 import main_app.views as views
 from auth_app import views as auth_views
-from main_app.models import Works, db, User
-from admin_app.views import WorksView, HomeView, UserView
+from main_app.models import Works, db, User, Backgrounds
+from admin_app.views import WorksView, HomeView, UserView, BackgroundsView
 import main_app.settings as settings
 
 app = Flask(__name__)
@@ -16,8 +16,18 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = settings.SQLALCHEMY_TRACK_MODIFICATIONS
 app.config['SECRET_KEY'] = settings.SECRET_KEY
 
-ENV = 'heroku'
-# ENV = 'local'
+# s3_session = boto3.Session(
+#    aws_access_key_id=app.config['S3_KEY'],
+#    aws_secret_access_key=app.config['S3_SECRET']
+# )
+
+# s3 = s3_session.resource('s3')
+
+
+
+
+# ENV = 'heroku'
+ENV = 'local'
 
 if ENV == 'local':
     app.config['SQLALCHEMY_DATABASE_URI'] = settings.DEV_DB_URI
@@ -52,6 +62,8 @@ login = LoginManager(app)
 admin = Admin(app, template_mode='bootstrap4', index_view=HomeView())
 
 admin.add_view(WorksView(Works, db.session))
+admin.add_view(BackgroundsView(Backgrounds, db.session))
+
 admin.add_view(UserView(User, db.session))
 
 admin.add_link(auth_views.LogoutMenuLink(name='Logout', category='', url="/logout"))

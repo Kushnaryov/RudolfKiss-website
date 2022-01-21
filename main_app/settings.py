@@ -1,13 +1,22 @@
 import os
+from dotenv import load_dotenv
 from secrets import token_urlsafe
+
+load_dotenv()
 
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 SECRET_KEY = token_urlsafe(16)
 # DATABASE_FILE = 'dd7fn5k9enmm1m'
 
-content_path = 'static/media/videos/'
+content_path = 'static/media/'
 app_dir = os.path.realpath(os.path.dirname(__file__))
 # db_path = os.path.join(app_dir, DATABASE_FILE)
 
 DEV_DB_URI = 'postgresql://postgres:joydivision32@localhost/RudolfKiss'
-PROD_DB_URI = 'postgresql://kmwxpdyyexwybk:bfb5b1676e82a15d198ab2f38b8f05314a0fa4defda98f542fe2636b68859aaf@ec2-34-249-49-9.eu-west-1.compute.amazonaws.com:5432/d6vpkslpcd5ad4'
+PROD_DB_URI = os.getenv('HEROKU_PROD_DB_URI')
+
+S3_BUCKET = 'rudolfkiss.com'
+S3_REGION = 'eu-central-1'
+S3_KEY = os.getenv('AWS_ACCES_KEY')
+S3_SECRET = os.getenv('AWS_ACCES_SECRET')
+

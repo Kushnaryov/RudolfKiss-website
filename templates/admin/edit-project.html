@@ -1,7 +1,8 @@
 {% extends 'admin/model/edit.html' %}
-
-{% block access_control %}
-    <h1>Edit Project View</h1>
-
-    {{ super() }}
+{% block brand %}
+<img src="{{ url_for('static', filename='img/cross.webp') }}">
+{% endblock %}
+{% block head_css %}
+{{super()}}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/admin/index.css') }}">
 {% endblock %}

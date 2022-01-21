@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-    $(".video-png").click(function(e) {
+    $(".video").click(function(e) {
         $(".iframe-wrapper").addClass('show'); 
         $("#vimeo").attr('src', $(this).attr('name'));
     });

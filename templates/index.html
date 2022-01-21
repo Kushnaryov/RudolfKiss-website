@@ -7,7 +7,7 @@
     <!-- BACKGROUND -->
     <div class = 'main-background'>
         <div class="wrapper-v">
-            <video class="background-v" src="{{ url_for('static', filename=background) }}" autoplay muted loop id='background-v'></video>
+            <video class="background-v" src="{{ background }}" autoplay muted loop id='background-v'></video>
 
         </div>
         <div class='Rudolf font-ambidexter'>
@@ -41,7 +41,7 @@
     <!-- WORKS -->
     <div class="works-view">
         <div class="filter-title">
-            <span class="font-ambidexter fs-works-title" id="content">{{ category }}</span>
+            <span class="font-ambidexter fs-works-title" id="content">NEW STUFF</span>
         </div>
         <div class="works-container">
             {% for work in works %}
@@ -78,8 +78,9 @@
                 <div class="{{class_wrapper}}">
                     <div class="{{class_frame}}">
                         <div class="work-video-frame">
-                            <img class='video-gif' src="{{ url_for('static' , filename = 'media/videos/' + work.name + '.gif') }}" />
-                            <img class='video-png' src="{{ url_for('static' , filename = 'media/videos/' + work.name + '.png') }}" name="{{ work.video_embed }}"/>
+                            <video class="video" src="{{ work.bucket_url }}" name="{{ work.video_embed }}" loop muted></video>
+                            <!-- <img class='video-gif' src="{{ url_for('static' , filename = 'media/videos/' + work.name + '.gif') }}" /> -->
+                            <!-- <img class='video-png' src="{{ url_for('static' , filename = 'media/videos/' + work.name + '.png') }}" /> -->
                         </div>
                     </div>
                     <div class="{{class_title}}">
@@ -99,7 +100,6 @@
         <iframe  id='vimeo' width="640" height="360" name='vimeo' frameborder="0" allowfullscreen></iframe>
     </div>
 {% endblock %}
-<!-- src='https://player.vimeo.com/video/248956245' $('#vimeo').attr('src', link);-->
 {% block content_extra %}
 {% block videos %}
 {% endblock videos %}

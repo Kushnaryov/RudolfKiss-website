@@ -25,10 +25,18 @@ class ProjectForm(Form):
     #                             validators=[InputRequired()])
     category = SelectField(u'category', choices=[('NEW STUFF', 'NEW STUFF'),
                                                  ('COMMERCIALS', 'COMMERCIALS'), 
-                                                 ('CINEMATOGRAPHY WORK', 'CINEMATOGRAPHY WORK'),
+                                                 ('CINEMA', 'CINEMA'),
                                                  ('MUSIC VIDEOS', 'MUSIC VIDEOS'),
                                                  ('DOCUMENTARIES', 'DOCUMENTARIES'), 
-                                                 ('SHORT FILMS', 'SHORT FILMS'),
-                                                 ('SHOWREEL', 'SHOWREEL'),
-                                                 ('background', 'BACKGROUND')])
+                                                 ('SHORT FILMS', 'SHORT FILMS')])
     # slug = StringField('Slug', validators=[InputRequired()])
+
+
+class BackgroundForm(Form):
+    video_url = StringField('video_url', validators=[InputRequired()])
+    page = SelectField(u'page', choices=[('NEW STUFF', 'NEW STUFF'),
+                                                 ('COMMERCIALS', 'COMMERCIALS'), 
+                                                 ('CINEMA', 'CINEMA'),
+                                                 ('MUSIC VIDEOS', 'MUSIC VIDEOS'),
+                                                 ('DOCUMENTARIES', 'DOCUMENTARIES'), 
+                                                 ('SHORT FILMS', 'SHORT FILMS')])
