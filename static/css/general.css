@@ -306,3 +306,18 @@ iframe {
     transition: all .2s ease-in-out;
 }
 
+.login-wrapper {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    margin: 20px;
+    opacity: 0.5;
+}
+
+.login-button {
+    height: inherit;
+    width: auto;
+}

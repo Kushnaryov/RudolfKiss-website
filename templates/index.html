@@ -4,17 +4,18 @@
 {% endblock %}
 
 {% block content %}
+    <a class="login-wrapper" href="{{ url_for('login') }}">
+        <img href class='login-button' src="{{ url_for('static', filename='img/cross-black.png') }}">
+    </a>
     <!-- BACKGROUND -->
     <div class = 'main-background'>
         <div class="wrapper-v">
             <video class="background-v" src="{{ background }}" autoplay muted loop id='background-v'></video>
-
         </div>
         <div class='Rudolf font-ambidexter'>
             <span class="fs-name-s pink">RUDOLF</span>
             <span class="fs-name-b">KISS</span>
         </div>
-        
         <div class='Director font-acier'>
             <span class="fs-pos-b">DIRECTOR/</span>
             <span class="fs-pos-s">CINEMATOGRAPHER</span>

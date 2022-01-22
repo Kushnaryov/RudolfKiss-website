@@ -5,10 +5,10 @@ from main_app.settings import S3_KEY, S3_SECRET, S3_BUCKET, S3_REGION
 import boto3
 
 def clear_string_from_parentheses(string: str):
-    return re.sub("( \(.*?\))", "", string)
+    return re.sub("(\(.*?\))", "", string)
 
 def clear_string_from_second_divider(string: str):
-    return re.sub("( \/.*)", "", string)
+    return re.sub("(\/.*)", "", string)
 
 def download_video(url: str, path: str, quality='min'):
     quality = 0 if quality == 'min' else -1
@@ -44,6 +44,7 @@ def get_name(url: str):
     try:
         string = Vimeo(url).metadata.title
         string = clear_string_from_parentheses(string)
+        string = re.sub("\r?\n|\r/g", "", string)
         string = string.replace(' / ', '-')
         string = string.replace(':', '-')
         string = string.replace(' ', '_')
@@ -51,7 +52,9 @@ def get_name(url: str):
         for splitter in splitters:
             if splitter in string:
                 first_name = string.split(splitter)[0]
+                print(f'before cleaning: {string.split(splitter)[1]}')
                 second_name = clear_string_from_second_divider(string.split(splitter)[1])
+                print(f'after cleaning: {second_name}')
                 name = f'{first_name}{splitter}{second_name}'
             else:
                 name = string
