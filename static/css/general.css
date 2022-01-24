@@ -314,9 +314,14 @@ iframe {
     right: 0;
     top: 0;
     margin: 20px;
-    opacity: 0.5;
+    opacity: 0.0;
+    transition: all .5s ease-in-out;
 }
 
+.login-wrapper:hover {
+    transition: all .2s ease-in-out;
+    opacity: 0.2;
+}
 .login-button {
     height: inherit;
     width: auto;
