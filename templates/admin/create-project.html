@@ -6,10 +6,12 @@
 {{super()}}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/admin/index.css') }}">
 {% endblock %}
-{% block page_body %}
+{% block messages %}
 {{super()}}
 <div class='text'>
-    <a>*Uploading and processing video's can take around 2 minutes</a>
+    <a>* Uploading and processing video's can take around 2 minutes</a>
+    <br>
+    <a>** Long videos will affect on website perfomance</a>
 </div>
 
 {% endblock %}

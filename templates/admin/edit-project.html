@@ -6,3 +6,10 @@
 {{super()}}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/admin/index.css') }}">
 {% endblock %}
+
+{% block messages %}
+<div class='text'>
+    <a>* Type 'autofill' in fields 'first name' and 'second name' to autofill it from vimeo</a>
+</div>
+{{super()}}
+{% endblock %}

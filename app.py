@@ -1,9 +1,6 @@
 from flask import Flask
 from flask_admin import Admin
 from flask_login import LoginManager
-# from migrate import create_base_user
-# from flask_admin.contrib.sqla import ModelView
-# from main_app.migrate import migrate
 
 import main_app.views as views
 from auth_app import views as auth_views
@@ -16,18 +13,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = settings.SQLALCHEMY_TRACK_MODIFICATIONS
 app.config['SECRET_KEY'] = settings.SECRET_KEY
 
-# s3_session = boto3.Session(
-#    aws_access_key_id=app.config['S3_KEY'],
-#    aws_secret_access_key=app.config['S3_SECRET']
-# )
-
-# s3 = s3_session.resource('s3')
-
-
-
-
-ENV = 'heroku'
-# ENV = 'local'
+# ENV = 'heroku'
+ENV = 'local'
 
 if ENV == 'local':
     app.config['SQLALCHEMY_DATABASE_URI'] = settings.DEV_DB_URI

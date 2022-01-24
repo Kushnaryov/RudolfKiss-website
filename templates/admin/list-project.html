@@ -6,3 +6,9 @@
 {{super()}}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/admin/index.css') }}">
 {% endblock %}
+{% block messages %}
+<div class='text'>
+    <a>* Videos with highest order numbers will be shown first</a>
+</div>
+{{super()}}
+{% endblock %}

@@ -1,5 +1,4 @@
 import re, os
-from moviepy.editor import VideoFileClip
 from vimeo_downloader import Vimeo
 from main_app.settings import S3_KEY, S3_SECRET, S3_BUCKET, S3_REGION
 import boto3
@@ -40,27 +39,46 @@ def create_mp4(url: str, path: str, filename: str, usage: str,  start: int, end:
     os.remove(origin_file)
     print('origin removed')
 
-def get_name(url: str):
+def remove_all_extra_spaces(string):
+    return " ".join(string.split())
+
+def connect_to_vimeo(url: str):
     try:
-        string = Vimeo(url).metadata.title
-        string = clear_string_from_parentheses(string)
-        string = re.sub("\r?\n|\r/g", "", string)
-        string = string.replace(' / ', '-')
-        string = string.replace(':', '-')
-        string = string.replace(' ', '_')
-        splitters = ['-']
-        for splitter in splitters:
-            if splitter in string:
-                first_name = string.split(splitter)[0]
-                print(f'before cleaning: {string.split(splitter)[1]}')
-                second_name = clear_string_from_second_divider(string.split(splitter)[1])
-                print(f'after cleaning: {second_name}')
-                name = f'{first_name}{splitter}{second_name}'
-            else:
-                name = string
-        return name
+        return Vimeo(url)    
     except:
         raise ValueError('Cannot get access to the vimeo. Check if url is correct')
+
+def get_display_names(url: str):
+    vimeo = Vimeo(url)
+    string = vimeo.metadata.title
+    string = clear_string_from_parentheses(string)
+    string = re.sub("\r?\n|\r/g", "", string)
+    
+    if ' / ' in string:
+        string = string.split(' / ')
+        first_name = string[0]
+        second_name = clear_string_from_second_divider(string[1])
+    elif ': ' in string:
+        string = string.split(': ')
+        first_name = string[0]
+        second_name = clear_string_from_second_divider(string[1])
+    else:
+        first_name = string
+        second_name = ''
+    first_name = remove_all_extra_spaces(first_name)
+    second_name = remove_all_extra_spaces(second_name)
+    return first_name, second_name
+
+
+def get_name(url: str):
+    first_name, second_name = get_display_names(url)
+    first_name = first_name.replace(' ', '_')
+    second_name = second_name.replace(' ', '_')
+    first_name = first_name.replace('#', '')
+    second_name = second_name.replace('#', '')
+    splitter = '' if second_name == '' else '-'
+    name = f'{first_name}{splitter}{second_name}'
+    return name
 
 def get_embed_url(url: str):
     return 'https://player.vimeo.com/video/'+url[-9:]

@@ -16,23 +16,22 @@ def IntegerValidator(form, field):
 
 class ProjectForm(Form):
     order_num = StringField('Order number', validators=[InputRequired(), IntegerValidator])
-    # name = StringField('Name', validators=[InputRequired()])
-    video_url = StringField('video_url', validators=[InputRequired()])
-    # video_url = FileUploadField(
-    #                             'Video', 
-    #                             base_path=settings.content_path, 
-    #                             allowed_extensions = allowed_ext,
-    #                             validators=[InputRequired()])
-    category = SelectField(u'category', choices=[('NEW STUFF', 'NEW STUFF'),
+    first_name = StringField('First name', default='autofill or type name', validators=[InputRequired()])
+    second_name = StringField('Second name', default='autofill or type name', validators=[InputRequired()])
+    start = StringField('Start time (sec)', default=2, validators=[InputRequired(), IntegerValidator])
+    length = StringField('Sample length (sec)', default=5, validators=[InputRequired(), IntegerValidator])
+    video_url = StringField('Video url', validators=[InputRequired()])
+    category = SelectField(u'Category', choices=[('NEW STUFF', 'NEW STUFF'),
                                                  ('COMMERCIALS', 'COMMERCIALS'), 
                                                  ('CINEMA', 'CINEMA'),
                                                  ('MUSIC VIDEOS', 'MUSIC VIDEOS'),
                                                  ('DOCUMENTARIES', 'DOCUMENTARIES'), 
                                                  ('SHORT FILMS', 'SHORT FILMS')])
-    # slug = StringField('Slug', validators=[InputRequired()])
 
 
 class BackgroundForm(Form):
+    start = StringField('Start time (sec)', default=2, validators=[InputRequired(), IntegerValidator])
+    length = StringField('Sample length (sec)', default=20, validators=[InputRequired(), IntegerValidator])
     video_url = StringField('video_url', validators=[InputRequired()])
     page = SelectField(u'page', choices=[('NEW STUFF', 'NEW STUFF'),
                                                  ('COMMERCIALS', 'COMMERCIALS'), 

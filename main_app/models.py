@@ -8,9 +8,13 @@ class Works(db.Model):
     __tablename__ = 'Projects'
     id = db.Column(db.Integer, primary_key = True)
     order_num = db.Column(db.Integer, nullable=False)
-    name = db.Column(db.String(100))
-    video_url = db.Column(db.String(50), nullable=False, unique=True)
+    first_name = db.Column(db.String(50))
+    second_name = db.Column(db.String(50))
+    start = db.Column(db.Integer)
+    length = db.Column(db.Integer)
     category = db.Column(db.String(20), nullable=False)
+    encoded_name = db.Column(db.String(100))
+    video_url = db.Column(db.String(50), nullable=False, unique=True)
     video_embed = db.Column(db.String(150))
     bucket_url = db.Column(db.String(200))
 
@@ -18,7 +22,9 @@ class Works(db.Model):
 class Backgrounds(db.Model):
     __tablename__ = 'Backgrounds'
     id = db.Column(db.Integer, primary_key = True)
-    name = db.Column(db.String(100))
+    start = db.Column(db.Integer)
+    length = db.Column(db.Integer)
+    encoded_name = db.Column(db.String(100))
     video_url = db.Column(db.String(50), nullable=False)
     page = db.Column(db.String(20), nullable=False, unique=True)
     bucket_url = db.Column(db.String(200))
