@@ -26,7 +26,7 @@ body::-webkit-scrollbar {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    height: 75vh;
+    height: 80vh;
     overflow: hidden;
 }
 
@@ -36,7 +36,8 @@ body::-webkit-scrollbar {
 }
 
 .background-v {
-    width: 100%;
+    min-width: 100%;
+    min-height: 80vh;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -76,31 +77,37 @@ body::-webkit-scrollbar {
 }
 
 .cross {
+    position: absolute;
+    top: 70vh;
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 20vh;
     justify-content: center;
-    transform: translateY(-53%);
-    z-index: -1;
+    transform: translateY(-10px);
+    z-index: 60;
+    align-items: center;
 }
 
 #cross {
-    height: 25vw;
+    height: 20vw;
     width: auto;
 }
 
 .wrapper-nav {
     display: flex;
-    height: 25vh;
+    height: 20vh;
     width: 100%;
     margin: 0;
     padding: 0;
-    position: absolute;
-    bottom: 0;
+    position: relative;
     left: 0;
     z-index: 10;
     align-content: center;
     justify-content: space-between;
+    padding-bottom: 20px;
+    transition: all .1s ease-in-out;
+    background-color: black;
+    border-bottom: #fdbebe 1px;
 }
 
 .nav {
@@ -108,17 +115,28 @@ body::-webkit-scrollbar {
     flex-wrap: nowrap;
     height: 100%;
     align-items: center;
-    width: 35%;
+    width: 30%;
     justify-content: space-around;
 }
 
 .links-left {
-    margin-left: 20px;
+    margin-left: 5vw;
 }
 
 .links-right {
-    margin-right: 20px;
+    margin-right: 5vw;
 }
+
+.fixed {
+    width: 100%;
+    position:fixed;
+    height: 100px;
+    top:0;
+    transition: all .3s ease-in-out;
+    margin: 0;
+    padding: 0;
+}
+
 
 
 ul {
@@ -128,8 +146,6 @@ ul {
 }
 
 .works-view {
-    position: absolute;
-    top: 100vh;
     width: calc(100% - 5px);
     height: auto;
     z-index: 12;
@@ -141,6 +157,20 @@ ul {
     flex-direction: row;
     align-items: center;
     margin-bottom: 50px;
+    transition: all .3s ease-in-out;
+    height: 100px;
+    background-color: black;
+    z-index: 100;
+}
+
+.page-fixed {
+    position:fixed;
+    height: 100px;
+    font-size: 20px;
+    top: 0;
+    transition: all .3s ease-in-out;
+    z-index: 10;
+    padding: 0;
 }
 
 .works-container {
@@ -159,6 +189,7 @@ ul {
     height: 300px;
     width: 35%;
     margin-bottom: 50px;
+    cursor: url("static/img/cross.webp"), auto;
     
 }
 
@@ -167,6 +198,7 @@ ul {
     margin-right: 50px;
     /* background-color: grey; */
     height: 300px;
+    cursor: url("static/img/cross.webp"), auto;
 }
 
 .work-frame {
@@ -224,7 +256,7 @@ ul {
     height: 25%;
     width: 90%;
     margin-left: 5%;
-    z-index: 91;
+    z-index: 0;
 }
 
 .title-small {
@@ -236,23 +268,6 @@ ul {
     color: white;
     transform: translate(0, -75px);
 }
-
-/* .video-gif {
-    height: 135%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%); 
-}
-
-.video-png {
-    height: 135%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    opacity: 1; 
-} */
 
 .video {
     height: 135%;
@@ -325,4 +340,92 @@ iframe {
 .login-button {
     height: inherit;
     width: auto;
+}
+
+.footer {
+    display: flex;
+    background-color: inherit;
+    height: 35vh;
+    z-index: 10;
+}
+
+.contact {
+    color: white;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 130px;
+}
+
+.email {
+    font-size: 30px;
+    line-height: 0px;
+}
+
+.telephone {
+    font-size: 52px;
+    line-height: 0px;
+}
+
+.logo {
+    width: 34%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cross-logo {
+    max-height: 25vh;
+}
+
+.name-logo {
+    max-width: 100%;
+}
+
+.social-links {
+    width: 33%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-logo {
+    margin: 10px;
+    padding: 10px;
+    margin-bottom: 155px;
+    max-width: 7vh;
+}
+
+.marquee {
+    position: relative;
+    background-color: #fdbebe;
+    z-index: 10;
+    height: 5vh;
+    font-size: 34px;
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y:hidden;
+}
+
+.track {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 20s linear infinite;
+  font-size: 20px;
+  margin: 5px;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
 }

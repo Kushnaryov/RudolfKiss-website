@@ -4,19 +4,21 @@ $(document).ready(function() {
     var vh = $(window).height()
     var vw = $(window).width()
     $(window).scroll(function() {
-        if ($(window).scrollTop() >= (0.75 + 0.074)*vh) {
-            console.log($(window).scrollTop());
-            $("#nav").addClass("sticky")
+        console.log($(window).scrollTop())
+        console.log(vh)
+        if ($(window).scrollTop() >= (0.8)*vh) {
+            // console.log($(window).scrollTop());
+            $('#nav').addClass('fixed');
         } else {
-            $("#nav").removeClass("sticky");
+            $('#nav').removeClass('fixed');
         };
 
-        if ($(window).scrollTop() >= 0.75*vh-0.25*vw) {
-            P
+        if ($(window).scrollTop() >= (1)*vh) {
+            // console.log($(window).scrollTop());
+            $('#page-title').addClass('page-fixed');
         } else {
-
+            $('#page-title').removeClass('page-fixed');
         };
-
     });
 });
 // Get the navbar

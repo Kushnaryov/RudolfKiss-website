@@ -4,6 +4,7 @@
 {% endblock %}
 
 {% block content %}
+<div class='wrapper'>
     <a class="login-wrapper" href="{{ url_for('login') }}">
         <img href class='login-button' src="{{ url_for('static', filename='img/key.png') }}">
     </a>
@@ -23,27 +24,33 @@
     </div>
 
     <!-- NAVIGATION -->
+    
     <div class="cross">
         <img src="{{ url_for('static', filename='img/cross.webp') }}" id="cross">
     </div>
-    <div class='wrapper-nav' id="nav">
-        <form method="POST" class='nav links-left'>
-            <input class="font-acier fs-nav-links" type="submit" name="category" value="NEW STUFF">
-            <input class="font-acier fs-nav-links" type="submit" name="category" value="COMMERCIALS">
-            <input class="font-acier fs-nav-links" type="submit" name="category" value="CINEMA">
-        </form>
-        <form method="POST" class='nav links-right'>
-            <input class="font-acier fs-nav-links" type="submit" name="category" value="MUSIC VIDEOS">
-            <input class="font-acier fs-nav-links" type="submit" name="category" value="DOCUMENTARIES">
-            <input class="font-acier fs-nav-links" type="submit" name="category" value="SHORT FILMS">
-        </form>
+    <div class='wrapper-nav'>
+        <div class='wrapper-nav' id='nav'>
+            <form method="POST" class='nav links-left'>
+                <input class="font-acier fs-nav-links" type="submit" name="category" value="HOME">
+                <input class="font-acier fs-nav-links" type="submit" name="category" value="COMMERCIALS">
+                <input class="font-acier fs-nav-links" type="submit" name="category" value="MUSIC VIDEOS">
+            </form>
+
+            <form method="POST" class='nav links-right'>
+                <input class="font-acier fs-nav-links" type="submit" name="category" value="SHORT FILMS">
+                <input class="font-acier fs-nav-links" type="submit" name="category" value="DOCUMENTARIES">
+                <input class="font-acier fs-nav-links" type="submit" name="category" value="DOP WORKS">
+            </form>
+        </div>
     </div>
 
     <!-- WORKS -->
-    <div class="works-view">
-        <div class="filter-title">
+    <div class="filter-title">
+        <div id="page-title" class="filter-title">
             <span class="font-ambidexter fs-works-title" id="content">NEW STUFF</span>
         </div>
+    </div>
+    <div class="works-view">
         <div class="works-container">
             {% for work in works %}
                 
@@ -95,11 +102,59 @@
             {% endfor %}
         </div>
     </div>
-    
+</div>
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="contact font-acier">
+            <a class="email">peter@rudolfkiss.com</a>
+            <br>
+            <a class="telephone">+36209445843</a>
+        </div>
+        <div class="logo">
+            <img class="cross-logo" src="{{ url_for('static', filename='img/cross.webp') }}">
+            <img class="name-logo" src="{{ url_for('static', filename='img/name.webp') }}">
+        </div>
+        <div class="social-links">
+            <img class="social-logo" src="{{ url_for('static', filename='img/facebook.png') }}">
+            <img class="social-logo" src="{{ url_for('static', filename='img/twitter.png') }}">
+            <img class="social-logo" src="{{ url_for('static', filename='img/youtube.png') }}">
+            <img class="social-logo" src="{{ url_for('static', filename='img/vimeo.png') }}">
+        </div>
+    </div>
+    <!-- MARQUEE -->
+    <div class="marquee">
+        <div class="track">
+          <div class="font-acier">&nbsp;
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  </div>
+        </div>
+    </div>
     <div class='iframe-wrapper'>
         <div class='iframe-background'></div>
         <iframe  id='vimeo' width="640" height="360" name='vimeo' frameborder="0" allowfullscreen></iframe>
     </div>
+
 {% endblock %}
 {% block content_extra %}
 {% block videos %}
