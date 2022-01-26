@@ -120,7 +120,7 @@ def music_videos():
 def short_films():
     works = []
     try:
-        projects = ShortFilms.query.order_by(desc(ShortFilms.order_num)).filter_by(category='Works')
+        projects = ShortFilms.query.order_by(desc(ShortFilms.order_num)).filter_by(category='Background')
         
         for project in projects:
             if project.encoded_name != None:
