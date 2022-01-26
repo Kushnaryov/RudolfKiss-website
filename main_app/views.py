@@ -88,7 +88,7 @@ def music_videos():
         if project.encoded_name != None:
             title_1 = project.first_name
             title_2 = project.second_name
-            separator = ' / ' #if title_2 != '' else ''
+            separator = ' / ' if title_2 != '' else ''
             dic = {
                 'title_1': title_1,
                 'title_2': title_2,
