@@ -2,6 +2,8 @@ import re, os
 from vimeo_downloader import Vimeo
 from main_app.settings import S3_KEY, S3_SECRET, S3_BUCKET, S3_REGION
 import boto3
+import datetime
+
 
 def clear_string_from_parentheses(string: str):
     return re.sub("(\(.*?\))", "", string)
@@ -19,9 +21,12 @@ def download_video(url: str, path: str, quality='min'):
         raise ValueError('Cannot download video from vimeo. Try again, or another')
 
 def create_mp4(url: str, path: str, filename: str, usage: str,  start: int, end: int):
-    start, end = [f'0{i}' if len(str(i))==1 else i for i in [start, end]]
-    video_start = f'00:00:{start}'
-    video_end = f'00:00:{end}'
+    video_start = str(datetime.timedelta(seconds=int(start)))
+    video_end = str(datetime.timedelta(seconds=int(end)))
+    
+    
+    # video_start = f'00:00:{start}'
+    # video_end = f'00:00:{end}'
     origin_file = f'{path}{filename}.mp4'
     result_file = f'{path}{filename}_{usage}.mp4'
 
@@ -72,10 +77,15 @@ def get_display_names(url: str):
 
 def get_name(url: str):
     first_name, second_name = get_display_names(url)
+    first_name = re.sub("['!@#$]", '', first_name)
+    second_name = re.sub("['!@#$]", '', second_name)
     first_name = first_name.replace(' ', '_')
     second_name = second_name.replace(' ', '_')
-    first_name = first_name.replace('#', '')
-    second_name = second_name.replace('#', '')
+    # first_name = first_name.replace('#', '')
+    # second_name = second_name.replace('#', '')
+    # first_name = first_name.replace('\'', '')
+    # second_name = second_name.replace('\'', '')
+
     splitter = '' if second_name == '' else '-'
     name = f'{first_name}{splitter}{second_name}'
     return name

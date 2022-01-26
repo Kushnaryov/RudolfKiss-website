@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/fonts.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/general.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/commercials.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar-comm.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/works.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/footer.css') }}">
+
+{% endblock %}
+
+{% block content %}
+<div class='wrapper'>
+    <a class="login-wrapper" href="{{ url_for('login') }}">
+        <img href class='login-button' src="{{ url_for('static', filename='img/key.png') }}">
+    </a>
+    <!-- BACKGROUND -->
+    <div class = 'main-background'>
+        <div class="wrapper-v" id="background">
+            <video class="background-v" src="{{ background.video }}" autoplay muted loop id='background-v'></video>
+        </div>
+        <div class='commercials font-ambidexter'>
+            <a class="fs-category-s pink">C</a>
+            <a class="fs-category-s">OMMER</a>
+            <a class="fs-category-s pink">C</a>
+            <a class="fs-category-s">IALS</a>
+        </div>
+        <div class='video-name font-acier'>
+            <span class="fs-video-s">{{ background.title_1 }}</span>
+            <span class="fs-video-s pink">&nbsp;{{ background.separator }}&nbsp;</span>
+            <br>
+            <span class="fs-video-b">{{ background.title_2 }}</span>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    
+
+    <div class='wrapper-nav'>
+        <div class='wrapper-nav' id='nav'>
+            <div class='nav links-left'>
+                <a class="font-acier fs-nav-links" href="{{ url_for('home') }}">HOME</a>
+                <a class="font-acier fs-nav-links pink" href="{{ url_for('commercials') }}">COMMERCIALS</a>
+                <a class="font-acier fs-nav-links" href="{{ url_for('music-videos') }}">MUSIC VIDEOS</a>
+            </div>
+            <div class="cross">
+                    <img class='cross-name' src="{{ url_for('static', filename='img/cross-pink.png') }}" id="cross">
+                    <a class="cross-name font-ambidexter fs-name-b" id='filter-comm'>KISS</a>
+            </div>
+            <div class='nav links-right'>
+                <a class="font-acier fs-nav-links" href="{{ url_for('short-films') }}">SHORT FILMS</a>
+                <a class="font-acier fs-nav-links" href="{{ url_for('documentaries') }}">DOCUMENTARIES</a>
+                <a class="font-acier fs-nav-links" href="{{ url_for('dop-works') }}">DOP WORKS</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- WORKS -->
+    <!-- <div class="filter-title">
+        <div id="page-title" class="filter-title">
+            <span class="font-ambidexter fs-works-title" id="content">NEW STUFF</span>
+        </div>
+    </div> -->
+    <div class="works-view">
+        <div class="works-container">
+            {% for work in works %}
+                
+                {% if (loop.index-1)//3%2 == 0 %}     
+                <!-- ONE BIG TWO SMALL -->
+                    {% if loop.index%2 == 0 %}
+                        {% set class_wrapper = 'work-wrapper-big' %}
+                        {% set class_frame = 'work-frame chamfer-20-all' %}
+                        {% set class_title = 'work-title title-big' %}
+                    {% else %}
+                        {% set class_wrapper = 'work-wrapper-small two' %}
+                        {% set class_frame = 'work-frame frame-small chamfer-10-all' %}
+                        {% set class_title = 'work-title title-small' %}
+                    {% endif %}
+                {% else %}
+                <!-- TWO BIG ONE SMALL -->
+                    {% if loop.index%2 == 0 %}
+                        {% if (loop.index-1)%3 == 0 %}
+                            {% set class_wrapper = 'work-wrapper-big' %}
+                            {% set class_frame = 'work-frame chamfer-20-right' %}
+                            {% set class_title = 'work-title title-big' %}
+                        {% else %}
+                            {% set class_wrapper = 'work-wrapper-big' %}
+                            {% set class_frame = 'work-frame chamfer-20-left' %}
+                            {% set class_title = 'work-title title-big' %}
+                        {% endif %}
+                    {% else %}
+                        {% set class_wrapper = 'work-wrapper-small one' %}
+                        {% set class_frame = 'work-frame frame-small chamfer-10-all' %}
+                        {% set class_title = 'work-title title-small' %}
+                    {% endif %}
+                {% endif %}
+                <div class="{{class_wrapper}}">
+                    <div class="{{class_frame}}">
+                        <div class="work-video-frame">
+                            <video class="video" src="{{ work.video }}" name="{{ work.video_embed }}" loop muted></video>
+                        </div>
+                    </div>
+                    <div class="{{class_title}}">
+                            <span class="font-acier fs-work-title-sm">{{work.title_1}} </span>
+                            <span class="font-acier fs-work-title-sm pink">&nbsp;{{ work.separator }}&nbsp;</span> 
+                            <span class="font-acier fs-work-title-lg">{{work.title_2}}</span>
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="contact font-acier">
+            <a class="email">peter@rudolfkiss.com</a>
+            <br>
+            <a class="telephone">+36209445843</a>
+        </div>
+        <div class="logo">
+            <img class="cross-logo" src="{{ url_for('static', filename='img/cross.webp') }}">
+            <img class="name-logo" src="{{ url_for('static', filename='img/name.webp') }}">
+        </div>
+        <div class="social-links">
+            <img class="social-logo" src="{{ url_for('static', filename='img/facebook.png') }}">
+            <img class="social-logo" src="{{ url_for('static', filename='img/twitter.png') }}">
+            <img class="social-logo" src="{{ url_for('static', filename='img/youtube.png') }}">
+            <img class="social-logo" src="{{ url_for('static', filename='img/vimeo.png') }}">
+        </div>
+    </div>
+    <!-- MARQUEE -->
+    <div class="marquee">
+        <div class="track">
+          <div class="font-acier">&nbsp;
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me 
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  </div>
+        </div>
+    </div>
+    <div class='iframe-wrapper'>
+        <div class='iframe-background'></div>
+        <iframe  id='vimeo' width="640" height="360" name='vimeo' frameborder="0" allowfullscreen></iframe>
+    </div>
+
+{% endblock %}
+{% block content_extra %}
+{% block videos %}
+{% endblock videos %}
+{% endblock content_extra %}

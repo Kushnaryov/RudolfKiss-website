@@ -1,11 +1,5 @@
-
 $(document).ready(function() {
-    $(".video").click(function(e) {
-        $(".iframe-wrapper").addClass('show'); 
-        $("#vimeo").attr('src', $(this).attr('name'));
-    });
     $(".video-name").click(function(e) {
-        console.log('clicked')
         $(".iframe-wrapper").addClass('show'); 
         $("#vimeo").attr('src', $(this).attr('name'));
     });

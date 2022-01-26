@@ -1,0 +1,89 @@
+.shortfilms {
+    position: absolute;
+    display: flex;
+    top: 20vh;
+    /* left: 45px; */
+    height: 50px;
+    width: 100%;
+    color: white;
+    font-size: 4vh;
+    justify-content: center;
+}
+
+.main-background {
+    position: relative;
+    display: flex;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wrapper-v {
+    display: flex;
+    flex-direction: column;
+}
+
+.background-v {
+    min-width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}   
+
+.pink {
+    color: #fdbebe;
+}
+
+.video-name {
+    width: fit-content;
+    display: inline-flex;
+    color: azure;
+    position: absolute;
+    justify-content: center;
+    top: 50vh;
+    right: 50vw;
+    transform: translateY(-50%) translateX(50%);
+    z-index: 20;
+    flex-wrap: wrap;
+    font-size: 18vw;
+    cursor: pointer;
+}
+
+/* iframe {
+    display: none;
+} */
+
+iframe {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 100;
+    width: 85vw;
+    height: 70vh;
+}
+
+.iframe-wrapper {
+    display: none;
+    z-index: 101;
+    top: 0;
+    position: fixed;
+}
+
+.iframe-background {
+    z-index: 99;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.95;
+}
+
+.show {
+    display: block;
+}

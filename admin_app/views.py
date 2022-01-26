@@ -7,7 +7,7 @@ from flask_admin.babel import gettext
 from flask import session, flash
 
 from werkzeug.utils import redirect
-from admin_app.forms import ProjectForm, BackgroundForm
+from admin_app.forms import VideoForm, BackgroundForm
 from admin_app.helpers import *
 from main_app.settings import content_path
 
@@ -40,11 +40,10 @@ class AccessModelView(ModelView):
         return redirect('/login')
 
 
-class VideoModelView(AccessModelView):
+class NewStuffView(AccessModelView):
     # variables to override in specific VideoModelViews
-    usage = ''
-    video_start = 0
-    video_end = 5
+    column_list = ['order_num', 'first_name', 'second_name','start', 'length', 'video_url', 'category']
+    form = VideoForm
     #
 
     def create_model(self, form):
@@ -55,13 +54,21 @@ class VideoModelView(AccessModelView):
             self._on_model_change(form, model, True)
 
             # custom functionality
+            usage = 'small' if model.category == 'Works' else 'background'
+
+            first_name, second_name = get_display_names(model.video_url)
             encoded_name = get_name(model.video_url)
             embed_url = get_embed_url(model.video_url)
+
+            model.first_name = first_name if 'autofill' in model.first_name else model.first_name
+            model.second_name = second_name if 'autofill' in model.second_name else model.second_name
             model.encoded_name = encoded_name 
             model.video_embed = embed_url
-            create_mp4(model.video_url, content_path, encoded_name , self.usage, model.start, int(model.start)+int(model.length))
-            upload_file_to_bucket(content_path, encoded_name, self.usage)
-            model.bucket_url = get_bucket_url(content_path, encoded_name, self.usage)
+            
+            create_mp4(model.video_url, content_path, encoded_name , usage, model.start, int(model.start)+int(model.length))
+            upload_file_to_bucket(content_path, encoded_name, usage)
+            model.bucket_url = get_bucket_url(content_path, encoded_name, usage)
+
             self.session.commit()
             #
             
@@ -78,45 +85,14 @@ class VideoModelView(AccessModelView):
         old_encoded_name = model.encoded_name
         old_start = model.start
         old_length = model.length
-        super(VideoModelView, self).update_model(form, model)
+        super(NewStuffView, self).update_model(form, model)
         new_start = model.start
         new_length = model.length
         new_encoded_name = get_name(model.video_url)
         if (old_encoded_name != new_encoded_name) or (old_length != new_length) or (old_start != new_start):
             self.delete_model(model)
             self.create_model(form)
-            # update_mp4(model.video_url, content_path, old_encoded_name, new_encoded_name, self.usage, model.start, int(model.start)+int(model.length))
-            # update_file_in_bucket(content_path, old_encoded_name, new_encoded_name, self.usage)
-            # model.encoded_name = new_encoded_name
-            # model.start = new_start
-            # model.length = new_length
-            # model.video_embed = get_embed_url(model.video_url)
-            # model.bucket_url = get_bucket_url(content_path, model.encoded_name, self.usage)
-            # self.session.commit()
-
-    def delete_model(self, model):
-        encoded_name  = model.encoded_name
-        delete_file_from_bucket(content_path, encoded_name, self.usage)
-        super(VideoModelView, self).delete_model(model)
-        delete_mp4(content_path, encoded_name, self.usage)
-
-
-class WorksView(VideoModelView):
-    column_list = ['order_num', 'first_name', 'second_name','start', 'length', 'video_url', 'category']
-    usage = 'small'
-    
-    def create_model(self, form):
-        model = super().create_model(form)
-        first_name, second_name = get_display_names(model.video_url)
-        model.first_name = first_name if 'autofill' in model.first_name else model.first_name
-        model.second_name = second_name if 'autofill' in model.second_name else model.second_name
-        self.session.commit()
-        return model
-    
-    def update_model(self, form, model):
-        super().update_model(form, model)
         new_first_name = model.first_name
-        print(new_first_name)
         new_second_name = model.second_name
         if 'autofill' in new_first_name:
             model.first_name, _ = get_display_names(model.video_url)
@@ -124,16 +100,28 @@ class WorksView(VideoModelView):
             _, model.second_name = get_display_names(model.video_url)
         self.session.commit()
 
-    form = ProjectForm
+    def delete_model(self, model):
+        usage = 'small' if model.category == 'Works' else 'background'
+        encoded_name  = model.encoded_name
+        delete_file_from_bucket(content_path, encoded_name, usage)
+        super(NewStuffView, self).delete_model(model)
+        delete_mp4(content_path, encoded_name, usage)
 
 
-class BackgroundsView(VideoModelView):
-    column_list = ['encoded_name', 'start', 'length', 'video_url', 'page']
-    usage = 'background'
+class CommercialsView(NewStuffView):
+    column_list = ['order_num', 'first_name', 'second_name','start', 'length', 'video_url', 'category']
 
-    form = BackgroundForm
+class MusicVideosView(NewStuffView):
+    column_list = ['order_num', 'first_name', 'second_name','start', 'length', 'video_url', 'category']
 
+class ShortFilmsView(NewStuffView):
+    column_list = ['order_num', 'first_name', 'second_name','start', 'length', 'video_url', 'category']
 
+class DocumentariesView(NewStuffView):
+    column_list = ['order_num', 'first_name', 'second_name','start', 'length', 'video_url', 'category']
+
+class DopWorksView(NewStuffView):
+    column_list = ['order_num', 'first_name', 'second_name','start', 'length', 'video_url', 'category']
 class UserView(AccessModelView):
     can_create = False
     can_delete = False

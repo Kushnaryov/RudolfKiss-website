@@ -15,7 +15,7 @@
 
 .font-acier {
     font-family: 'acier';
-    line-height: 40px;
+    line-height: 3vw;
 }
 
 .fs-pos-b {
@@ -36,7 +36,7 @@
 
 .fs-nav-links {
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 1.4vw;
     background-color: inherit;
     border: 0;
     color: white;
@@ -48,12 +48,23 @@
 }
 
 .fs-work-title-sm {
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 1.4vw;
+    line-height: 1.4vw;
 }
 
 .fs-work-title-lg {
-    font-size: 32px;
-    line-height: 19px;
+    font-size: 1.8vw;
+    line-height: 1.8vw;
 }
 
+.fs-category-s {
+    font-size: 12vw;
+}
+
+.fs-video-s {
+    font-size: 3.5vw;
+}
+
+.fs-video-b {
+    font-size: 4.0vw;
+}

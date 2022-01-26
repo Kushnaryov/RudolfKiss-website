@@ -23,7 +23,7 @@ def login():
     if request.method == 'POST':
         if request.form.get('username') == name and request.form.get('password') == password: # to encrypt this
             login_user(User.query.get(1))
-            return redirect('/admin/works')
+            return redirect('/admin/newstuff')
         else:
             return render_template('auth/login.html', failed=True) 
     return render_template('auth/login.html')

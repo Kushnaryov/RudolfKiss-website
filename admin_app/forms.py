@@ -14,19 +14,15 @@ def IntegerValidator(form, field):
         raise ValidationError('Field must an integer')
 
 
-class ProjectForm(Form):
+class VideoForm(Form):
     order_num = StringField('Order number', validators=[InputRequired(), IntegerValidator])
     first_name = StringField('First name', default='autofill or type name', validators=[InputRequired()])
     second_name = StringField('Second name', default='autofill or type name', validators=[InputRequired()])
     start = StringField('Start time (sec)', default=2, validators=[InputRequired(), IntegerValidator])
     length = StringField('Sample length (sec)', default=5, validators=[InputRequired(), IntegerValidator])
     video_url = StringField('Video url', validators=[InputRequired()])
-    category = SelectField(u'Category', choices=[('NEW STUFF', 'NEW STUFF'),
-                                                 ('COMMERCIALS', 'COMMERCIALS'), 
-                                                 ('CINEMA', 'CINEMA'),
-                                                 ('MUSIC VIDEOS', 'MUSIC VIDEOS'),
-                                                 ('DOCUMENTARIES', 'DOCUMENTARIES'), 
-                                                 ('SHORT FILMS', 'SHORT FILMS')])
+    category = SelectField(u'Category', choices=[('Works', 'Works'),
+                                                 ('Background', 'Background')])
 
 
 class BackgroundForm(Form):

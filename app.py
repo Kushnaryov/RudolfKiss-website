@@ -4,8 +4,8 @@ from flask_login import LoginManager
 
 import main_app.views as views
 from auth_app import views as auth_views
-from main_app.models import Works, db, User, Backgrounds
-from admin_app.views import WorksView, HomeView, UserView, BackgroundsView
+from main_app.models import *
+from admin_app.views import *
 import main_app.settings as settings
 
 app = Flask(__name__)
@@ -37,8 +37,12 @@ def register_views(views_to_register):
         
 
 views_to_register = [
-        ('/', 'home', views.home, ['GET', 'POST']),
-        ('/category=new-stuff', 'new-stuff', views.home),
+        ('/', 'home', views.home),
+        ('/commercials', 'commercials', views.commercials),
+        ('/music-videos', 'music-videos', views.music_videos),
+        ('/short-films', 'short-films', views.short_films),
+        ('/home', 'documentaries', views.documentaries),
+        ('/home', 'dop-works', views.dop_works),
         ('/login', 'login', auth_views.login, ['GET', 'POST']),
         ('/logout', 'logout', auth_views.logout)
                     ]
@@ -48,8 +52,12 @@ register_views(views_to_register)
 login = LoginManager(app)
 admin = Admin(app, template_mode='bootstrap4', index_view=HomeView())
 
-admin.add_view(WorksView(Works, db.session))
-admin.add_view(BackgroundsView(Backgrounds, db.session))
+admin.add_view(NewStuffView(NewStuff, db.session))
+admin.add_view(CommercialsView(Commercials, db.session))
+admin.add_view(MusicVideosView(MusicVideos, db.session))
+admin.add_view(ShortFilmsView(ShortFilms, db.session))
+admin.add_view(DocumentariesView(Documentaries, db.session))
+admin.add_view(DopWorksView(DopWorks, db.session))
 
 admin.add_view(UserView(User, db.session))
 

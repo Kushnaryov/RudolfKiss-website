@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 
 {% block header %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/fonts.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/general.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar-home.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/works.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/footer.css') }}">
+
 {% endblock %}
 
 {% block content %}
@@ -11,7 +18,7 @@
     <!-- BACKGROUND -->
     <div class = 'main-background'>
         <div class="wrapper-v">
-            <video class="background-v" src="{{ background }}" autoplay muted loop id='background-v'></video>
+            <video class="background-v" src="{{ background.video }}" autoplay muted loop id='background-v'></video>
         </div>
         <div class='Rudolf font-ambidexter'>
             <span class="fs-name-s pink">RUDOLF</span>
@@ -25,31 +32,34 @@
 
     <!-- NAVIGATION -->
     
-    <div class="cross">
+    <!-- <div class="cross">
         <img src="{{ url_for('static', filename='img/cross.webp') }}" id="cross">
-    </div>
+    </div> -->
     <div class='wrapper-nav'>
         <div class='wrapper-nav' id='nav'>
-            <form method="POST" class='nav links-left'>
-                <input class="font-acier fs-nav-links" type="submit" name="category" value="HOME">
-                <input class="font-acier fs-nav-links" type="submit" name="category" value="COMMERCIALS">
-                <input class="font-acier fs-nav-links" type="submit" name="category" value="MUSIC VIDEOS">
-            </form>
-
-            <form method="POST" class='nav links-right'>
-                <input class="font-acier fs-nav-links" type="submit" name="category" value="SHORT FILMS">
-                <input class="font-acier fs-nav-links" type="submit" name="category" value="DOCUMENTARIES">
-                <input class="font-acier fs-nav-links" type="submit" name="category" value="DOP WORKS">
-            </form>
+            <div class='nav links-left'>
+                <a class="font-acier fs-nav-links pink" href="{{ url_for('home') }}">HOME</a>
+                <a class="font-acier fs-nav-links" href="{{ url_for('commercials') }}">COMMERCIALS</a>
+                <a class="font-acier fs-nav-links" href="{{ url_for('music-videos') }}">MUSIC VIDEOS</a>
+            </div>
+            <div class="cross">
+                <img class='cross-name cross-not-fixed' src="{{ url_for('static', filename='img/cross-pink.png') }}" id="cross">
+                <a class="cross-name font-ambidexter fs-name-s name-not-fixed" id='filter-name'>NEW STUFF</a>
+            </div>
+            <div class='nav links-right'>
+                <a class="font-acier fs-nav-links" href="{{ url_for('short-films') }}">SHORT FILMS</a>
+                <a class="font-acier fs-nav-links" href="{{ url_for('documentaries') }}">DOCUMENTARIES</a>
+                <a class="font-acier fs-nav-links" href="{{ url_for('dop-works') }}">DOP WORKS</a>
+            </div>
         </div>
     </div>
 
     <!-- WORKS -->
-    <div class="filter-title">
+    <!-- <div class="filter-title">
         <div id="page-title" class="filter-title">
             <span class="font-ambidexter fs-works-title" id="content">NEW STUFF</span>
         </div>
-    </div>
+    </div> -->
     <div class="works-view">
         <div class="works-container">
             {% for work in works %}
@@ -87,12 +97,9 @@
                     <div class="{{class_frame}}">
                         <div class="work-video-frame">
                             <video class="video" src="{{ work.bucket_url }}" name="{{ work.video_embed }}" loop muted></video>
-                            <!-- <img class='video-gif' src="{{ url_for('static' , filename = 'media/videos/' + work.name + '.gif') }}" /> -->
-                            <!-- <img class='video-png' src="{{ url_for('static' , filename = 'media/videos/' + work.name + '.png') }}" /> -->
                         </div>
                     </div>
                     <div class="{{class_title}}">
-                        <!-- <p class="font-acier fs-nav-links"> -->
                             <span class="font-acier fs-work-title-sm">{{work.title_1}} </span>
                             <span class="font-acier fs-work-title-sm pink">&nbsp;{{ work.separator }}&nbsp;</span> 
                             <span class="font-acier fs-work-title-lg">{{work.title_2}}</span>

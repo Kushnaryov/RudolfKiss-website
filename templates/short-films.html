@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/fonts.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/general.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/shortfilms.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar-opac.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/footer.css') }}">
+<script language="JavaScript" type="text/javascript" src="{{ url_for('static', filename='js/iframe.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class='wrapper'>
+    <a class="login-wrapper" href="{{ url_for('login') }}">
+        <img href class='login-button' src="{{ url_for('static', filename='img/key.png') }}">
+    </a>
+    <!-- BACKGROUND -->
+    {% for work in works %}
+        <div class = 'main-background'>
+            <div class="wrapper-v">
+                <video  class="background-v" src="{{ work.video }}" autoplay muted loop></video>
+            </div>
+            <div class='shortfilms font-acier'>
+                <a>SHORT FILM</a>
+            </div>
+            <div class='video-name font-acier' name='{{ work.video_embed }}'>
+                {{ work.title_1 }}
+            </div>
+        </div>
+    {% endfor %}
+    
+
+    <!-- NAVIGATION -->
+    
+
+    <div class='wrapper-nav'>
+        <div class='wrapper-nav' id='nav'>
+            <div class='nav links-left'>
+                <a class="font-acier fs-nav-links" href="{{ url_for('home') }}">HOME</a>
+                <a class="font-acier fs-nav-links" href="{{ url_for('commercials') }}">COMMERCIALS</a>
+                <a class="font-acier fs-nav-links" href="{{ url_for('music-videos') }}">MUSIC VIDEOS</a>
+            </div>
+            <div class="cross">
+                    <img class='cross-name' src="{{ url_for('static', filename='img/cross-pink.png') }}" id="cross">
+                    <!-- <a class="cross-name font-ambidexter fs-name-b" id='filter-comm'>KISS</a> -->
+            </div>
+            <div class='nav links-right'>
+                <a class="font-acier fs-nav-links pink" href="{{ url_for('short-films') }}">SHORT FILMS</a>
+                <a class="font-acier fs-nav-links" href="{{ url_for('documentaries') }}">DOCUMENTARIES</a>
+                <a class="font-acier fs-nav-links" href="{{ url_for('dop-works') }}">DOP WORKS</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+     <!-- FOOTER -->
+    <div class="footer">
+        <div class="contact font-acier">
+            <a class="email">peter@rudolfkiss.com</a>
+            <br>
+            <a class="telephone">+36209445843</a>
+        </div>
+        <div class="logo">
+            <img class="cross-logo" src="{{ url_for('static', filename='img/cross.webp') }}">
+            <img class="name-logo" src="{{ url_for('static', filename='img/name.webp') }}">
+        </div>
+        <div class="social-links">
+            <img class="social-logo" src="{{ url_for('static', filename='img/facebook.png') }}">
+            <img class="social-logo" src="{{ url_for('static', filename='img/twitter.png') }}">
+            <img class="social-logo" src="{{ url_for('static', filename='img/youtube.png') }}">
+            <img class="social-logo" src="{{ url_for('static', filename='img/vimeo.png') }}">
+        </div>
+    </div>
+    <!-- MARQUEE -->
+    <div class="marquee">
+        <div class="track">
+          <div class="font-acier">&nbsp;
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me 
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  
+              /  contact  me  </div>
+        </div>
+    </div>
+    <div class='iframe-wrapper'>
+        <div class='iframe-background'></div>
+        <iframe  id='vimeo' width="640" height="360" name='vimeo' frameborder="0" allowfullscreen></iframe>
+    </div>
+
+{% endblock %}
+{% block content_extra %}
+{% block videos %}
+{% endblock videos %}
+{% endblock content_extra %}

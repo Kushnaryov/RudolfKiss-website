@@ -1,0 +1,146 @@
+.works-view {
+    width: calc(100% - 5px);
+    height: auto;
+    z-index: 12;
+}
+
+
+.works-container {
+    /* padding: 50px 0px 20px 0px; */
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.work-wrapper-big {
+    /* background-color: grey; */
+    height: 300px;
+    width: 35%;
+    margin-bottom: 50px;
+    cursor: url("cross.webp"), auto;
+    
+}
+
+.work-wrapper-small {
+    margin-left: 50px;
+    margin-right: 50px;
+    /* background-color: grey; */
+    height: 300px;
+    cursor: url("cross.webp"), auto;
+}
+
+.work-frame {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.frame-small {
+    height: 75%;
+}
+
+.chamfer-20-all {
+    -webkit-clip-path: polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 20px 100%, 0% calc(100% - 20px), 0% 20px);
+    clip-path: polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 20px 100%, 0% calc(100% - 20px), 0% 20px);
+}
+
+.chamfer-10-all {
+    -webkit-clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px);
+    clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px);
+}
+.chamfer-20-left {
+    -webkit-clip-path: polygon(20px 0, calc(100% - 20px) 0, 100% 0px, 100% 100%, calc(100% - 20px) 100%, 20px 100%, 0% calc(100% - 20px), 0% 20px);
+    clip-path: polygon(20px 0, calc(100% - 20px) 0, 100% 0px, 100% 100%, calc(100% - 20px) 100%, 20px 100%, 0% calc(100% - 20px), 0% 20px);
+}
+.chamfer-20-right {
+    -webkit-clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0% calc(100% - 20px));
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0% calc(100% - 20px))
+}
+
+.one {
+    width: calc(30% - 100px);
+}
+
+.two {
+    width: calc((100% - 35%)/2 - 100px);
+}
+
+.work-video-frame {
+    height: 100%;
+    width: 100%;
+    z-index: 90;
+    position: relative;
+}
+
+.work-title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    transform: translate(0, -75px);
+    height: 25%;
+    width: 90%;
+    margin-left: 5%;
+    z-index: 0;
+}
+
+.title-small {
+    color: white;
+    transform: translate(0, 0);
+    text-align: center;
+}
+
+.title-big {
+    color: white;
+    transform: translate(0, -75px);
+    text-align: center;
+}
+
+.video {
+    height: 135%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    opacity: 1; 
+}
+
+.video-png:hover {
+    opacity: 0;
+}
+
+iframe {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 100;
+    width: 85vw;
+    height: 70vh;
+}
+
+.iframe-wrapper {
+    display: none;
+    z-index: 101;
+    top: 0;
+    position: fixed;
+}
+
+.iframe-background {
+    z-index: 99;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.95;
+}
+
+.show {
+    display: block;
+}
