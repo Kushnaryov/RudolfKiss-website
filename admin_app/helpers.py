@@ -91,7 +91,7 @@ def get_name(url: str):
     return name
 
 def get_embed_url(url: str):
-    return 'https://player.vimeo.com/video/'+re.find('\d*)')
+    return 'https://player.vimeo.com/video/'+re.findall('\d*)')
 
 def delete_mp4(path: str, filename: str, usage: str):
     try:
