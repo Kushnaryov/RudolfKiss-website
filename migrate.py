@@ -50,6 +50,10 @@ COMMERCIALS = [
     'https://vimeo.com/56990646',
 ]
 
+MUSIC = [
+    '',
+]
+
 with app.app_context():
     db.drop_all()
     db.create_all()

@@ -41,7 +41,7 @@ views_to_register = [
         ('/commercials', 'commercials', views.commercials),
         ('/music-videos', 'music-videos', views.music_videos),
         ('/short-films', 'short-films', views.short_films),
-        ('/home', 'documentaries', views.documentaries),
+        ('/documentaries', 'documentaries', views.documentaries),
         ('/home', 'dop-works', views.dop_works),
         ('/login', 'login', auth_views.login, ['GET', 'POST']),
         ('/logout', 'logout', auth_views.logout)

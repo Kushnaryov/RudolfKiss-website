@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $(".video-name").click(function(e) {
+    $("#video-link").click(function(e) {
         $(".iframe-wrapper").addClass('show'); 
         $("#vimeo").attr('src', $(this).attr('name'));
     });

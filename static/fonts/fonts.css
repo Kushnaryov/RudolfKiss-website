@@ -15,7 +15,7 @@
 
 .font-acier {
     font-family: 'acier';
-    line-height: 3vw;
+    /* line-height: 3vw; */
 }
 
 .fs-pos-b {
@@ -27,12 +27,13 @@
 }
 
 .fs-name-b {
-    font-size: 12vh;
+    font-size: 6vw;
 }
 
 .fs-name-s {
-    font-size: 7vh;
+    font-size: 3vw;
 }
+
 
 .fs-nav-links {
     text-transform: uppercase;
@@ -68,3 +69,8 @@
 .fs-video-b {
     font-size: 4.0vw;
 }
+
+.uppercase {
+    text-transform: uppercase;
+}
+

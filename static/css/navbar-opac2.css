@@ -16,7 +16,6 @@
     display: flex;
     align-content: center;
     align-items: center;
-    width: max-content;
 }
 
 
@@ -31,7 +30,23 @@
     transition: all .2s ease-in-out;
 }
 
-
+.main-wrapper-nav{
+    display: flex;
+    height: 40vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 60vh;
+    z-index: 10;
+    align-content: center;
+    justify-content: space-between;
+    transition: all .1s ease-in-out;
+    /* background-color: black; */
+    /* border-bottom: #fdbebe 1px; */
+    align-items: center;
+}
 
 .wrapper-nav {
     display: flex;
@@ -72,7 +87,7 @@
     position: fixed;
     top: 0;
     height: 100px;
-    background-color: black;
+    /* background-color: black; */
     
 }
 
@@ -85,7 +100,7 @@
     margin-bottom: 50px;
     transition: all .3s ease-in-out;
     height: 100px;
-    background-color: black;
+    /* background-color: black; */
     z-index: 100;
 }
 

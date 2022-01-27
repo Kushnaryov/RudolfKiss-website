@@ -46,7 +46,7 @@
             </div>
             <div class="cross">
                     <img class='cross-name' src="{{ url_for('static', filename='img/cross-pink.png') }}" id="cross">
-                    <!-- <a class="cross-name font-ambidexter fs-name-b" id='filter-comm'>KISS</a> -->
+                    <a class="cross-name font-ambidexter fs-name-s" id='filter-mus'></a>
             </div>
             <div class='nav links-right'>
                 <a class="font-acier fs-nav-links" href="{{ url_for('short-films') }}">SHORT FILMS</a>
@@ -112,22 +112,27 @@
         </div>
     </div>
 </div>
-    <!-- FOOTER -->
-    <div class="footer">
-        <div class="contact font-acier">
-            <a class="email">peter@rudolfkiss.com</a>
-            <br>
-            <a class="telephone">+36209445843</a>
+     <!-- FOOTER -->
+     <div class="footer-wrapper">
+        <div class="footer">
+            <div class="contact font-acier">
+                <a class="email">peter@rudolfkiss.com</a>
+                <br>
+                <a class="telephone">+36209445843</a>
+            </div>
+            <div class="logo">
+                <img class="cross-logo" src="{{ url_for('static', filename='img/cross.webp') }}">
+                
+            </div>
+            <div class="social-links">
+                <img class="social-logo" src="{{ url_for('static', filename='img/facebook.png') }}">
+                <img class="social-logo" src="{{ url_for('static', filename='img/twitter.png') }}">
+                <img class="social-logo" src="{{ url_for('static', filename='img/youtube.png') }}">
+                <img class="social-logo" src="{{ url_for('static', filename='img/vimeo.png') }}">
+            </div>
         </div>
-        <div class="logo">
-            <img class="cross-logo" src="{{ url_for('static', filename='img/cross.webp') }}">
-            <img class="name-logo" src="{{ url_for('static', filename='img/name.webp') }}">
-        </div>
-        <div class="social-links">
-            <img class="social-logo" src="{{ url_for('static', filename='img/facebook.png') }}">
-            <img class="social-logo" src="{{ url_for('static', filename='img/twitter.png') }}">
-            <img class="social-logo" src="{{ url_for('static', filename='img/youtube.png') }}">
-            <img class="social-logo" src="{{ url_for('static', filename='img/vimeo.png') }}">
+        <div class="name-logo">
+            <img class="name-image" src="{{ url_for('static', filename='img/name.webp') }}">
         </div>
     </div>
     <!-- MARQUEE -->
