@@ -43,6 +43,10 @@
     color: white;
 }
 
+.fs-nav-links:hover {
+    color: black;
+}
+
 .fs-works-title {
     font-size: 70px;
     color: white;
