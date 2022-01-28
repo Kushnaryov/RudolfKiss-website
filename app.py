@@ -13,8 +13,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = settings.SQLALCHEMY_TRACK_MODIFICATIONS
 app.config['SECRET_KEY'] = settings.SECRET_KEY
 
-ENV = 'heroku'
-# ENV = 'local'
+# ENV = 'heroku'
+ENV = 'local'
 
 if ENV == 'local':
     app.config['SQLALCHEMY_DATABASE_URI'] = settings.DEV_DB_URI
@@ -42,7 +42,7 @@ views_to_register = [
         ('/music-videos', 'music-videos', views.music_videos),
         ('/short-films', 'short-films', views.short_films),
         ('/documentaries', 'documentaries', views.documentaries),
-        ('/home', 'dop-works', views.dop_works),
+        ('/dop-works', 'dop-works', views.dop_works),
         ('/login', 'login', auth_views.login, ['GET', 'POST']),
         ('/logout', 'logout', auth_views.logout)
                     ]

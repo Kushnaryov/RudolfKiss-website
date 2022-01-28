@@ -12,7 +12,9 @@ class NewStuff(db.Model):
     second_name = db.Column(db.String(50))
     start = db.Column(db.Integer)
     length = db.Column(db.Integer)
-    category = db.Column(db.String(20), nullable=False)
+    category = db.Column(db.String(10), 
+                        nullable=False, 
+                        default='Background')
     encoded_name = db.Column(db.String(100))
     video_url = db.Column(db.String(50), nullable=False)
     video_embed = db.Column(db.String(150))
@@ -27,7 +29,9 @@ class Commercials(db.Model):
     second_name = db.Column(db.String(50))
     start = db.Column(db.Integer)
     length = db.Column(db.Integer)
-    category = db.Column(db.String(20), nullable=False)
+    category = db.Column(db.String(10), 
+                        nullable=False, 
+                        default='Background')
     encoded_name = db.Column(db.String(100))
     video_url = db.Column(db.String(50), nullable=False)
     video_embed = db.Column(db.String(150))
@@ -41,7 +45,9 @@ class MusicVideos(db.Model):
     second_name = db.Column(db.String(50))
     start = db.Column(db.Integer)
     length = db.Column(db.Integer)
-    category = db.Column(db.String(20), nullable=False)
+    category = db.Column(db.String(10), 
+                        nullable=False, 
+                        default='Background')
     encoded_name = db.Column(db.String(100))
     video_url = db.Column(db.String(50), nullable=False)
     video_embed = db.Column(db.String(150))
@@ -55,7 +61,9 @@ class ShortFilms(db.Model):
     second_name = db.Column(db.String(50))
     start = db.Column(db.Integer)
     length = db.Column(db.Integer)
-    category = db.Column(db.String(20), nullable=False)
+    category = db.Column(db.String(10), 
+                        nullable=False, 
+                        default='Background')
     encoded_name = db.Column(db.String(100))
     video_url = db.Column(db.String(50), nullable=False)
     video_embed = db.Column(db.String(150))
@@ -69,7 +77,9 @@ class Documentaries(db.Model):
     second_name = db.Column(db.String(50))
     start = db.Column(db.Integer)
     length = db.Column(db.Integer)
-    category = db.Column(db.String(20), nullable=False)
+    category = db.Column(db.String(10), 
+                        nullable=False, 
+                        default='Background')
     encoded_name = db.Column(db.String(100))
     video_url = db.Column(db.String(50), nullable=False)
     video_embed = db.Column(db.String(150))
@@ -83,7 +93,9 @@ class DopWorks(db.Model):
     second_name = db.Column(db.String(50))
     start = db.Column(db.Integer)
     length = db.Column(db.Integer)
-    category = db.Column(db.String(20), nullable=False)
+    category = db.Column(db.String(10), 
+                        nullable=False, 
+                        default='Background')
     encoded_name = db.Column(db.String(100))
     video_url = db.Column(db.String(50), nullable=False)
     video_embed = db.Column(db.String(150))

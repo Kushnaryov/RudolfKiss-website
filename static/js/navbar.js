@@ -16,6 +16,7 @@ $(document).ready(function() {
             $('#filter-comm').addClass('fs-name-s')
             $('#filter-doc').text('DOCUMENTARIES')
             $('#filter-mus').text('MUSIC VIDEOS')
+            $('#filter-shf').text('SHORT FILMS')
             filter-mus
             $('#background').css('display', 'none')
             $('.video-name').css('display', 'none')
@@ -28,6 +29,7 @@ $(document).ready(function() {
             $('#filter-comm').removeClass('fs-name-s')
             $('#filter-doc').text('')
             $('#filter-mus').text('')
+            $('#filter-shf').text('')
             $('#background').css('display', 'flex')
             $('.video-name').css('display', 'inline-flex')
         };

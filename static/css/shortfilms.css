@@ -8,6 +8,7 @@
     color: white;
     font-size: 4vh;
     justify-content: center;
+    
 }
 
 .main-background {
@@ -52,6 +53,15 @@
     flex-wrap: wrap;
     font-size: 18vw;
     cursor: pointer;
+    color: rgba(255, 255, 255, 0);
+    -webkit-text-stroke: 2px rgba(0, 0, 0, 1);
+    paint-order: stroke fill;
+}
+
+
+.video-name:hover {
+    color: rgba(255, 255, 255, 1);
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 1);
 }
 
 /* iframe {

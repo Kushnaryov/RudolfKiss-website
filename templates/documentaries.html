@@ -19,13 +19,15 @@
     <!-- BACKGROUND -->
     {% for work in works %}
     {% if loop.index == 1 %}
-        {% set class_title = 'documentaries font-ambidexter uppercase center' %}
+        {% set class_doc = 'show page_name font-acier' %}
+        {% set class_title = 'documentaries font-ambidexter uppercase center video-link' %}
     {% else %}
+        {% set class_doc = 'hide page_name font-acier' %}
         {% if (loop.index-1)%2 == 0 %}
-            {% set class_title = 'documentaries font-ambidexter uppercase left' %}
+            {% set class_title = 'documentaries font-ambidexter uppercase left video-link' %}
 
         {% else %}
-            {% set class_title = 'documentaries font-ambidexter uppercase right' %}
+            {% set class_title = 'documentaries font-ambidexter uppercase right video-link' %}
         {% endif %}
     {% endif %}
         <div class = 'main-background'>
@@ -33,12 +35,13 @@
                 <div class="wrapper-v">
                     <video  class="background-v" src="{{ work.video }}" autoplay muted loop></video>
                 </div>
-                <div class="{{ class_title }}" name='{{ work.video_embed }}' id="video-link">
+                <div class="{{ class_title }}" name='{{ work.video_embed }}'>
                     <a>{{ work.title_1 }}</a>
                 </div>
-                <!-- <div class='video-link font-acier' >
-                    {{ work.title_1 }}
-                </div> -->
+                
+                <div class='{{ class_doc }}' >
+                    DOCUMENTARIES
+                </div>
             <div class="pink-background">
             </div>
         </div>

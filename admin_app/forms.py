@@ -14,7 +14,7 @@ def IntegerValidator(form, field):
         raise ValidationError('Field must an integer')
 
 
-class VideoForm(Form):
+class WorksForm(Form):
     order_num = StringField('Order number', validators=[InputRequired(), IntegerValidator])
     first_name = StringField('First name', default='autofill or type name', validators=[InputRequired()])
     second_name = StringField('Second name', default='autofill or type name', validators=[InputRequired()])
@@ -26,12 +26,15 @@ class VideoForm(Form):
 
 
 class BackgroundForm(Form):
-    start = StringField('Start time (sec)', default=2, validators=[InputRequired(), IntegerValidator])
-    length = StringField('Sample length (sec)', default=20, validators=[InputRequired(), IntegerValidator])
+    order_num = StringField('Order number', validators=[InputRequired(), IntegerValidator])
+    first_name = StringField('First name', default='autofill or type name', validators=[InputRequired()])
+    second_name = StringField('Second name', default='autofill or type name', validators=[InputRequired()])
+    start = StringField('Start time (sec)', default=30, validators=[InputRequired(), IntegerValidator])
+    length = StringField('Sample length (sec)', default=10, validators=[InputRequired(), IntegerValidator])
     video_url = StringField('video_url', validators=[InputRequired()])
-    page = SelectField(u'page', choices=[('NEW STUFF', 'NEW STUFF'),
-                                                 ('COMMERCIALS', 'COMMERCIALS'), 
-                                                 ('CINEMA', 'CINEMA'),
-                                                 ('MUSIC VIDEOS', 'MUSIC VIDEOS'),
-                                                 ('DOCUMENTARIES', 'DOCUMENTARIES'), 
-                                                 ('SHORT FILMS', 'SHORT FILMS')])
+    # category = SelectField(u'page', choices=[('NEW STUFF', 'NEW STUFF'),
+    #                                              ('COMMERCIALS', 'COMMERCIALS'), 
+    #                                              ('CINEMA', 'CINEMA'),
+    #                                              ('MUSIC VIDEOS', 'MUSIC VIDEOS'),
+    #                                              ('DOCUMENTARIES', 'DOCUMENTARIES'), 
+    #                                              ('SHORT FILMS', 'SHORT FILMS')])
