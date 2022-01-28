@@ -45,6 +45,8 @@
 
 .fs-nav-links:hover {
     color: black;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 1);
+    paint-order: stroke fill;
 }
 
 .fs-works-title {
