@@ -2,7 +2,6 @@
     position: relative;
     display: flex;
     width: 20%;
-    height: 50vh;
     justify-content: center;
     /* transform: translateY(-10px); */
     z-index: 60;

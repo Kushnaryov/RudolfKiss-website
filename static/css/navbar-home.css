@@ -3,7 +3,6 @@
     display: flex;
     flex-wrap: nowrap;
     width: 25%;
-    height: 50vh;
     justify-content: center;
     /* transform: translateY(-10px); */
     z-index: 60;
