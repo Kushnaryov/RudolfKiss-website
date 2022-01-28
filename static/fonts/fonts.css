@@ -45,7 +45,7 @@
 
 .fs-nav-links:hover {
     color: black;
-    -webkit-text-stroke: 2px rgba(255, 255, 255, 1);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 1);
     paint-order: stroke fill;
 }
 
