@@ -14,9 +14,11 @@ $(document).ready(function() {
             $('#filter-name').removeClass('name-not-fixed')
             $('#filter-comm').text('COMMERCIALS')
             $('#filter-comm').addClass('fs-name-s')
-            $('#filter-doc').text('DOCUMENTARIES')
             $('#filter-mus').text('MUSIC VIDEOS')
+            $('#filter-doc').text('DOCUMENTARIES')
             $('#filter-shf').text('SHORT FILMS')
+            $('#filter-dop').text('DOP WORKS')
+            
             filter-mus
             $('#background').css('display', 'none')
             $('.video-name').css('display', 'none')
@@ -30,6 +32,7 @@ $(document).ready(function() {
             $('#filter-doc').text('')
             $('#filter-mus').text('')
             $('#filter-shf').text('')
+            $('#filter-dop').text('')
             $('#background').css('display', 'flex')
             $('.video-name').css('display', 'inline-flex')
         };
