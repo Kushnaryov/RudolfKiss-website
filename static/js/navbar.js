@@ -19,7 +19,7 @@ $(document).ready(function() {
             $('#filter-shf').text('SHORT FILMS')
             $('#filter-dop').text('DOP WORKS')
             
-            filter-mus
+            // filter-mus
             $('#background').css('display', 'none')
             $('.video-name').css('display', 'none')
         } else if ($(window).scrollTop() < top){
