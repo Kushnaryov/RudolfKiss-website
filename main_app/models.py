@@ -18,7 +18,7 @@ class NewStuff(db.Model):
     encoded_name = db.Column(db.String(100))
     video_url = db.Column(db.String(50), nullable=False)
     video_embed = db.Column(db.String(150))
-    bucket_url = db.Column(db.String(200))
+    video_s3_url = db.Column(db.String(200))
 
 
 class Commercials(db.Model):
@@ -35,7 +35,7 @@ class Commercials(db.Model):
     encoded_name = db.Column(db.String(100))
     video_url = db.Column(db.String(50), nullable=False)
     video_embed = db.Column(db.String(150))
-    bucket_url = db.Column(db.String(200))
+    video_s3_url = db.Column(db.String(200))
 
 class MusicVideos(db.Model):
     __tablename__ = 'MusicVideos'
@@ -51,7 +51,7 @@ class MusicVideos(db.Model):
     encoded_name = db.Column(db.String(100))
     video_url = db.Column(db.String(50), nullable=False)
     video_embed = db.Column(db.String(150))
-    bucket_url = db.Column(db.String(200))
+    video_s3_url = db.Column(db.String(200))
 
 class ShortFilms(db.Model):
     __tablename__ = 'ShortFilms'
@@ -67,7 +67,7 @@ class ShortFilms(db.Model):
     encoded_name = db.Column(db.String(100))
     video_url = db.Column(db.String(50), nullable=False)
     video_embed = db.Column(db.String(150))
-    bucket_url = db.Column(db.String(200))
+    video_s3_url = db.Column(db.String(200))
 
 class Documentaries(db.Model):
     __tablename__ = 'Documentaries'
@@ -83,7 +83,7 @@ class Documentaries(db.Model):
     encoded_name = db.Column(db.String(100))
     video_url = db.Column(db.String(50), nullable=False)
     video_embed = db.Column(db.String(150))
-    bucket_url = db.Column(db.String(200))
+    video_s3_url = db.Column(db.String(200))
 
 class DopWorks(db.Model):
     __tablename__ = 'DopWorks'
@@ -99,7 +99,7 @@ class DopWorks(db.Model):
     encoded_name = db.Column(db.String(100))
     video_url = db.Column(db.String(50), nullable=False)
     video_embed = db.Column(db.String(150))
-    bucket_url = db.Column(db.String(200))
+    video_s3_url = db.Column(db.String(200))
 
 class User(db.Model, UserMixin):
     __tablename__ = 'User'

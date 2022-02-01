@@ -18,7 +18,7 @@
     <!-- BACKGROUND -->
     <div class = 'main-background'>
         <div class="wrapper-v">
-            <video class="background-v" src="{{ background.video }}" autoplay muted loop id='background-v'></video>
+            <video class="background-v" src="{{ background.video }}" autoplay muted preload="none" loop id='background-v'></video>
         </div>
         <div class='Rudolf font-ambidexter'>
             <span class="fs-name-s pink">RUDOLF</span>
@@ -96,7 +96,7 @@
                 <div class="{{class_wrapper}}">
                     <div class="{{class_frame}}">
                         <div class="work-video-frame">
-                            <video class="video" src="{{ work.video }}" name="{{ work.video_embed }}" loop muted></video>
+                            <video class="video" src="{{ work.video }}" name="{{ work.video_embed }}" loop muted preload="none" poster='{{ work.poster }}'></video>
                         </div>
                     </div>
                     <div class="{{class_title}}">
