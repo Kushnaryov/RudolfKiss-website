@@ -62,7 +62,7 @@ class AccessModelView(ModelView):
             
             create_mp4(model.video_url, content_path, encoded_name , usage, model.start, int(model.start)+int(model.length))
             upload_file_to_bucket(content_path, encoded_name, usage)
-            model.video_s3_url = get_bucket_url(content_path, encoded_name, usage)
+            model.bucket_url = get_bucket_url(content_path, encoded_name, usage)
 
             self.session.commit()
             #

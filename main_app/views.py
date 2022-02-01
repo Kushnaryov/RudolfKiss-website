@@ -19,14 +19,14 @@ def one_background_and_works(db, template):
                     'separator': separator,
                     'name': project.encoded_name,
                     'video_embed': project.video_embed,
-                    'video' : project.video_s3_url
+                    'video' : project.bucket_url
                 }
                 works.append(dic)
         try:
             bg = db.query.filter_by(category='Background').one()
             separator = ' / ' if bg.second_name != '' else ''
             background = {
-                'video': bg.video_s3_url,
+                'video': bg.bucket_url,
                 'title_1': bg.first_name,
                 'title_2': bg.second_name,
                 'separator': separator
@@ -58,7 +58,7 @@ def all_backgrounds(db, template):
                     'separator': separator,
                     'name': project.encoded_name, # url from bucket 
                     'video_embed': project.video_embed,
-                    'video' : project.video_s3_url
+                    'video' : project.bucket_url
                 }
             works.append(dic)
     except:
