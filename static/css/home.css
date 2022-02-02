@@ -54,3 +54,17 @@
 .pink {
     color: #fdbebe;
 }
+
+@media all 
+and (max-device-width: 812px) 
+and (orientation:portrait) 
+and (-webkit-min-device-pixel-ratio: 2)
+{
+    .main-background {
+        height: 50vh;
+    }
+    .works-view {
+        width: 100%;
+    }
+
+}

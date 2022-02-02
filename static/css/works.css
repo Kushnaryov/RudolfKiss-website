@@ -6,30 +6,34 @@
 
 
 .works-container {
-    /* padding: 50px 0px 20px 0px; */
     margin-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 50px;
     width: 100%;
     justify-content: space-between;
+    justify-items: center;
+    align-items: start;
+    
 }
 
 .work-wrapper-big {
-    /* background-color: grey; */
     height: 300px;
-    width: 35%;
-    margin-bottom: 50px;
+    width: 100%;
     cursor: url("cross.webp"), auto;
     
 }
 
 .work-wrapper-small {
-    margin-left: 50px;
-    margin-right: 50px;
-    /* background-color: grey; */
     height: 300px;
     cursor: url("cross.webp"), auto;
+    width: 100%;
+}
+
+.work-wrapper-one {
+    height: 25vh;
+    cursor: url("cross.webp"), auto;
+    width: 100%;
 }
 
 .work-frame {
@@ -40,6 +44,10 @@
 
 .frame-small {
     height: 75%;
+}
+
+.frame-one {
+    height: 25vh;
 }
 
 .chamfer-20-all {
@@ -60,12 +68,9 @@
     clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0% calc(100% - 20px))
 }
 
-.one {
-    width: calc(30% - 100px);
-}
-
-.two {
-    width: calc((100% - 35%)/2 - 100px);
+.no-chamfer {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
 }
 
 .work-video-frame {
@@ -102,13 +107,20 @@
     text-align: center;
 }
 
+.title-one {
+    color: white;
+    transform: translate(0, -100px);
+    text-align: center;
+}
+
 .video {
-    height: 135%;
+    min-height: 135%;
+    min-width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
-    opacity: 1; 
+    opacity: 1;
 }
 
 .video-png:hover {
@@ -143,4 +155,18 @@ iframe {
 
 .show {
     display: block;
+}
+
+@media all 
+and (max-device-width: 812px) 
+and (orientation:portrait) 
+and (-webkit-min-device-pixel-ratio: 2)
+{
+    .works-view {
+        width: 100%;
+    }
+    .works-container {
+        margin-top: 0;
+        gap: 0;
+    }
 }

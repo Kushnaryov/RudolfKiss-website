@@ -31,10 +31,6 @@
     </div>
 
     <!-- NAVIGATION -->
-    
-    <!-- <div class="cross">
-        <img src="{{ url_for('static', filename='img/cross.webp') }}" id="cross">
-    </div> -->
     <div class='wrapper-nav'>
         <div class='wrapper-nav' id='nav'>
             <div class='nav links-left'>
@@ -55,29 +51,24 @@
     </div>
 
     <!-- WORKS -->
-    <!-- <div class="filter-title">
-        <div id="page-title" class="filter-title">
-            <span class="font-ambidexter fs-works-title" id="content">NEW STUFF</span>
-        </div>
-    </div> -->
     <div class="works-view">
         <div class="works-container">
             {% for work in works %}
                 
-                {% if (loop.index-1)//3%2 == 0 %}     
+                <!-- {% if (loop.index-1)//3%2 == 0 %}      -->
                 <!-- ONE BIG TWO SMALL -->
-                    {% if loop.index%2 == 0 %}
+                    <!-- {% if loop.index%2 == 0 %}
                         {% set class_wrapper = 'work-wrapper-big' %}
                         {% set class_frame = 'work-frame chamfer-20-all' %}
                         {% set class_title = 'work-title title-big' %}
                     {% else %}
-                        {% set class_wrapper = 'work-wrapper-small two' %}
+                        {% set class_wrapper = 'work-wrapper-small' %}
                         {% set class_frame = 'work-frame frame-small chamfer-10-all' %}
                         {% set class_title = 'work-title title-small' %}
                     {% endif %}
-                {% else %}
+                {% else %} -->
                 <!-- TWO BIG ONE SMALL -->
-                    {% if loop.index%2 == 0 %}
+                    <!-- {% if loop.index%2 == 0 %}
                         {% if (loop.index-1)%3 == 0 %}
                             {% set class_wrapper = 'work-wrapper-big' %}
                             {% set class_frame = 'work-frame chamfer-20-right' %}
@@ -88,18 +79,18 @@
                             {% set class_title = 'work-title title-big' %}
                         {% endif %}
                     {% else %}
-                        {% set class_wrapper = 'work-wrapper-small one' %}
+                        {% set class_wrapper = 'work-wrapper-small' %}
                         {% set class_frame = 'work-frame frame-small chamfer-10-all' %}
                         {% set class_title = 'work-title title-small' %}
                     {% endif %}
-                {% endif %}
-                <div class="{{class_wrapper}}">
-                    <div class="{{class_frame}}">
+                {% endif %} -->
+                <div class='work'> <!-- "{{class_wrapper}}"-->
+                    <div class='frame'> <!-- "{{class_frame}}" -->
                         <div class="work-video-frame">
                             <video class="video lazy" src="{{ work.video }}" name="{{ work.video_embed }}" loop muted></video>
                         </div>
                     </div>
-                    <div class="{{class_title}}">
+                    <div class='title'> <!-- "{{class_title}}" -->
                             <span class="font-acier fs-work-title-sm">{{work.title_1}} </span>
                             <span class="font-acier fs-work-title-sm pink">&nbsp;{{ work.separator }}&nbsp;</span> 
                             <span class="font-acier fs-work-title-lg">{{work.title_2}}</span>

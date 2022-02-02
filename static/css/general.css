@@ -6,6 +6,10 @@ body {
     background-color: black;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body::-webkit-scrollbar {
     width: 5px;
 }
@@ -52,4 +56,14 @@ a {
 .show {
     opacity: 1;
     transition: all .4s ease-in-out;
+}
+
+@media all 
+and (max-device-width: 812px) 
+and (orientation:portrait) 
+and (-webkit-min-device-pixel-ratio: 2)
+{
+    body {
+        width: 100%;
+    }
 }

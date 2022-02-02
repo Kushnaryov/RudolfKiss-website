@@ -57,7 +57,7 @@
     display: flex;
     flex-wrap: nowrap;
     height: 58%;
-    align-items: top;
+    align-items: center;
     width: 30%;
     justify-content: space-around;
 }
@@ -96,4 +96,28 @@
     transition: all .3s ease-in-out;
     z-index: 10;
     padding: 0;
+}
+
+@media all 
+and (max-device-width: 812px) 
+and (orientation:portrait) 
+and (-webkit-min-device-pixel-ratio: 2)
+{
+    .wrapper-nav {
+        height: 10vh;
+    }
+    .nav {
+        display: none;
+    }
+    #cross {
+        display: none;
+    }
+    .cross {
+        width: 100%;
+        height: 100%;
+    }
+    .cross-name {
+        transform: translate(0%);
+        font-size: 80px;
+    }
 }

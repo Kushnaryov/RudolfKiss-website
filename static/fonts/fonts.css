@@ -27,11 +27,11 @@
 }
 
 .fs-name-b {
-    font-size: 6vw;
+    font-size: 88px;
 }
 
 .fs-name-s {
-    font-size: 3vw;
+    font-size: 50px;
 }
 
 
@@ -78,5 +78,21 @@
 
 .uppercase {
     text-transform: uppercase;
+}
+
+@media all 
+and (max-device-width: 812px) 
+and (orientation:portrait) 
+and (-webkit-min-device-pixel-ratio: 2)
+{
+    .fs-work-title-sm {
+        font-size: 40px;
+        line-height: 40px;
+    }
+    
+    .fs-work-title-lg {
+        font-size: 40px;
+        line-height: 40px;
+    }
 }
 
