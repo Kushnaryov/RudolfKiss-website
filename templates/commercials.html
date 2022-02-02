@@ -18,7 +18,7 @@
     <!-- BACKGROUND -->
     <div class = 'main-background'>
         <div class="wrapper-v" id="background">
-            <video class="background-v" src="{{ background.video }}" autoplay muted loop id='background-v'></video>
+            <video class="background-v lazy" src="{{ background.video }}" autoplay muted loop id='background-v'></video>
         </div>
         <div class='commercials font-ambidexter'>
             <a class="fs-category-s pink">C</a>
@@ -98,7 +98,7 @@
                 <div class="{{class_wrapper}}">
                     <div class="{{class_frame}}">
                         <div class="work-video-frame">
-                            <video class="video" src="{{ work.video }}" name="{{ work.video_embed }}" loop muted></video>
+                            <video class="video lazy" src="{{ work.video }}" name="{{ work.video_embed }}" loop muted></video>
                         </div>
                     </div>
                     <div class="{{class_title}}">

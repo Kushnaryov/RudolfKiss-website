@@ -44,3 +44,12 @@ body::-webkit-scrollbar {
 a {
     text-decoration: none;
 }
+
+.wrapper {
+    opacity: 0;
+}
+
+.show {
+    opacity: 1;
+    transition: all .4s ease-in-out;
+}
