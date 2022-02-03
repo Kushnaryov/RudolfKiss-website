@@ -91,7 +91,51 @@
     line-height: 5vh;
 }
 
+
+
 @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
+}
+
+@media all 
+and (max-device-width: 812px) 
+and (orientation:portrait) 
+and (-webkit-min-device-pixel-ratio: 2)
+{
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 30vh;
+    }
+    .cross-logo {
+        max-height: 10vh;
+    }
+    .name-logo {
+        display: none;
+    }
+    .name-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .name-image {
+        max-width: 60%;
+    }
+    .social-links {
+        width: 100%;
+    }
+    .social-logo {
+        max-width: 10vh;
+        padding: 7vw;
+    }
+    .email {
+        font-size: 5.2vw;
+        line-height: 5.2vw;
+    }
+    .telephone {
+        font-size: 8.8vw;
+        line-height: 3.8vw;
+    }
 }

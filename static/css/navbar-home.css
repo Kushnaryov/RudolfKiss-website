@@ -104,7 +104,7 @@ and (orientation:portrait)
 and (-webkit-min-device-pixel-ratio: 2)
 {
     .wrapper-nav {
-        height: 10vh;
+        height: 5vh;
     }
     .nav {
         display: none;
