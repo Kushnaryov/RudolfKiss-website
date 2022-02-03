@@ -117,7 +117,7 @@ and (orientation:portrait)
 and (-webkit-min-device-pixel-ratio: 2)
 {
     .wrapper-nav {
-        height: 5vh;
+        height: 10vh;
     }
     .nav {
         display: none;
@@ -228,7 +228,7 @@ and (-webkit-min-device-pixel-ratio: 2)
     .menu-header {
         opacity: 0;
         position: fixed;
-        height: 5vh;
+        height: 10vh;
         width: 100vw;
         background-color: black;
         -webkit-transition: -webkit-transform .3s ease-in-out;
@@ -244,8 +244,8 @@ and (-webkit-min-device-pixel-ratio: 2)
 
     .menu-links {
         position: fixed;
-        top: 5vh;
-        height: 95vh;
+        top: 10vh;
+        height: 90vh;
         width: 100%;
         display: flex;
         flex-direction: column;
