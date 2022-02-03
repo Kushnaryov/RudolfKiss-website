@@ -1,5 +1,5 @@
 .works-view {
-    width: calc(100% - 5px);
+    width: 100%;
     height: auto;
     z-index: 12;
 }
