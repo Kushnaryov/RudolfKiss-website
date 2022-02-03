@@ -18,7 +18,7 @@
     <!-- BACKGROUND -->
     <div class = 'main-background'>
         <div class="wrapper-v">
-            <video class="background-v lazy" src="{{ background.video }}" autoplay muted preload="none" loop id='background-v'></video>
+            <video class="background-v lazy" src="{{ background.video }}" playsinline autoplay muted preload="none" loop id='background-v'></video>
         </div>
         <div class='Rudolf font-ambidexter'>
             <span class="fs-name-s pink">RUDOLF</span>
@@ -87,7 +87,7 @@
                 <div class='work'> <!-- "{{class_wrapper}}"-->
                     <div class='frame'> <!-- "{{class_frame}}" -->
                         <div class="work-video-frame">
-                            <video class="video lazy" src="{{ work.video }}" name="{{ work.video_embed }}" loop muted></video>
+                            <video class="video lazy" src="{{ work.video }}" name="{{ work.video_embed }}" playsinline loop muted></video>
                         </div>
                     </div>
                     <div class='title'> <!-- "{{class_title}}" -->
