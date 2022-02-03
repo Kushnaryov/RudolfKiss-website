@@ -32,7 +32,15 @@
 
     <!-- NAVIGATION -->
     <div class='wrapper-nav'>
+
         <div class='wrapper-nav' id='nav'>
+            <button class="menu-button" role="button">
+                <span class="burger">
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                </span>
+            </button>
             <div class='nav links-left'>
                 <a class="font-acier fs-nav-links pink" href="{{ url_for('home') }}">HOME</a>
                 <a class="font-acier fs-nav-links" href="{{ url_for('commercials') }}">COMMERCIALS</a>
@@ -43,6 +51,47 @@
                 <a class="cross-name font-ambidexter fs-name-s name-not-fixed" id='filter-name'>NEW STUFF</a>
             </div>
             <div class='nav links-right'>
+                <a class="font-acier fs-nav-links" href="{{ url_for('short-films') }}">SHORT FILMS</a>
+                <a class="font-acier fs-nav-links" href="{{ url_for('documentaries') }}">DOCUMENTARIES</a>
+                <a class="font-acier fs-nav-links" href="{{ url_for('dop-works') }}">DOP WORKS</a>
+            </div>
+            <button class="menu-button" role="button">
+                <span class="burger">
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                </span>
+            </button>
+        </div>
+
+    </div>
+    <div class='menu'>
+        <div class='menu-wrapper black'>
+            <div class='menu-header'>
+                <div class='wrapper-nav'>
+                    <button class="close-button" role="button">
+                        <span class="burger">
+                            <span class="burger-bar"></span>
+                            <span class="burger-bar"></span>
+                            <span class="burger-bar"></span>
+                        </span>
+                    </button>
+                    <div class="cross">
+                        <a class="cross-name font-ambidexter fs-name-s name-not-fixed" id='filter-name'>NEW STUFF</a>
+                    </div>
+                    <button class="close-button" role="button">
+                        <span class="burger">
+                            <span class="burger-bar"></span>
+                            <span class="burger-bar"></span>
+                            <span class="burger-bar"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="menu-links">
+                <a class="font-acier fs-nav-links pink" href="{{ url_for('home') }}">HOME</a>
+                <a class="font-acier fs-nav-links" href="{{ url_for('commercials') }}">COMMERCIALS</a>
+                <a class="font-acier fs-nav-links" href="{{ url_for('music-videos') }}">MUSIC VIDEOS</a>
                 <a class="font-acier fs-nav-links" href="{{ url_for('short-films') }}">SHORT FILMS</a>
                 <a class="font-acier fs-nav-links" href="{{ url_for('documentaries') }}">DOCUMENTARIES</a>
                 <a class="font-acier fs-nav-links" href="{{ url_for('dop-works') }}">DOP WORKS</a>
