@@ -22,6 +22,7 @@ $(document).ready(function() {
             $('.menu-button').each (function () {
                 $(this).addClass('menu-show')
             });
+            $('.cross-name').addClass('cross-name-transform')
             // filter-mus
             $('#background').css('display', 'none')
             $('.video-name').css('display', 'none')
@@ -42,6 +43,7 @@ $(document).ready(function() {
             $('.menu-button').each (function () {
                 $(this).removeClass('menu-show')
             });
+            $('.cross-name').removeClass('cross-name-transform')
         };
 
         if ($(window).scrollTop() >= top) {

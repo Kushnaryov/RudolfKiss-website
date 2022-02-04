@@ -112,6 +112,7 @@ and (-webkit-min-device-pixel-ratio: 2)
     }
     .cross-logo {
         max-height: 10vh;
+        transform: translateY(40px);
     }
     .name-logo {
         display: none;

@@ -49,4 +49,16 @@
     flex-wrap: wrap;
     white-space: nowrap;
 }
+@media all 
+and (max-device-width: 812px) 
+and (orientation:portrait) 
+and (-webkit-min-device-pixel-ratio: 2)
+{
+    .main-background {
+        height: 100vh;
+    }
+    .works-view {
+        width: 100%;
+    }
 
+}
