@@ -27,7 +27,12 @@ $(document).ready(function() {
             $('.cross-name').addClass('cross-name-transform')
             // filter-mus
             $('#background').css('display', 'none')
-            $('.video-name').css('display', 'none')
+            if ($(window).scrollTop() >= $(window).height()/3) {
+                $('.video-name').css('display', 'none')
+            } else {
+                $('.video-name').css('display', 'block')
+            }
+            
         } else if ($(window).scrollTop() < top){
             $('#nav').removeClass('fixed');
             $('#cross').addClass('cross-not-fixed')
