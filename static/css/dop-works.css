@@ -107,7 +107,7 @@ iframe {
     transform: translateY(-50%) translateX(-50%);
     z-index: 100;
     width: 85vw;
-    height: 70vh;
+    height: 80vh;
 }
 
 .iframe-wrapper {
@@ -149,3 +149,16 @@ iframe {
     width: 100%;    
     text-align: center;
 } */
+@media all 
+and (max-device-width: 812px) 
+and (orientation:portrait) 
+and (-webkit-min-device-pixel-ratio: 2)
+{
+    .first {
+        font-size: 6vw;
+    }
+
+    iframe {
+        height: 30vh;
+    }
+}

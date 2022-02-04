@@ -104,16 +104,19 @@
     <div class="works-view">
         <div class="works-container">
             {% for work in works %}
-                <div class='work'> <!-- "{{class_wrapper}}"-->
-                    <div class='frame'> <!-- "{{class_frame}}" -->
+                <div class='work'>
+                    <div class='frame'>
                         <div class="work-video-frame">
                             <video class="video lazy" src="{{ work.video }}#t=0.5" name="{{ work.video_embed }}" preload='metadata' playsinline loop muted></video>
                         </div>
                     </div>
-                    <div class='title'> <!-- "{{class_title}}" -->
+                    <div class='title'>
+
                             <span class="font-acier fs-work-title-sm">{{work.title_1}} </span>
-                            <span class="font-acier fs-work-title-sm pink">&nbsp;{{ work.separator }}&nbsp;</span> 
-                            <span class="font-acier fs-work-title-lg">{{work.title_2}}</span>
+                            {% if work.title_2 != '' %}
+                                <span class="font-acier fs-work-title-sm pink">&nbsp;{{ work.separator }}&nbsp;</span> 
+                                <span class="font-acier fs-work-title-lg">{{work.title_2}}</span>
+                            {% endif %}
                         </p>
                     </div>
                 </div>

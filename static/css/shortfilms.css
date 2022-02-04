@@ -97,3 +97,16 @@ iframe {
 .show {
     display: block;
 }
+
+@media all 
+and (max-device-width: 812px) 
+and (orientation:portrait) 
+and (-webkit-min-device-pixel-ratio: 2)
+{
+    .shortfilms {
+        display: none;
+    }
+    iframe {
+        height: 30vh;
+    }
+}

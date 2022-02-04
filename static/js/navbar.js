@@ -16,9 +16,11 @@ $(document).ready(function() {
             $('#filter-comm').text('COMMERCIALS')
             $('#filter-comm').addClass('fs-name-s')
             $('#filter-mus').text('MUSIC VIDEOS')
-            $('#filter-doc').text('DOCUMENTARIES')
+            $('#filter-doc').removeClass('opac-filter-name')
+            // $('#filter-doc').text('DOCUMENTARIES')
             $('#filter-shf').text('SHORT FILMS')
-            $('#filter-dop').text('DOP WORKS')
+            $('#filter-dop').removeClass('opac-filter-name')
+            // $('#filter-dop').text('DOP WORKS')
             $('.menu-button').each (function () {
                 $(this).addClass('menu-show')
             });
@@ -34,10 +36,12 @@ $(document).ready(function() {
             $('#filter-name').addClass('name-not-fixed')
             $('#filter-comm').text('KISS')
             $('#filter-comm').removeClass('fs-name-s')
-            $('#filter-doc').text('')
+            $('#filter-doc').addClass('opac-filter-name')
+            // $('#filter-doc').text('')
             $('#filter-mus').text('')
             $('#filter-shf').text('')
-            $('#filter-dop').text('')
+            $('#filter-dop').addClass('opac-filter-name')
+            // $('#filter-dop').text('')
             $('#background').css('display', 'flex')
             $('.video-name').css('display', 'inline-flex')
             $('.menu-button').each (function () {

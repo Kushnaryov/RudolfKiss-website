@@ -112,8 +112,10 @@
                     </div>
                     <div class='title'> <!-- "{{class_title}}" -->
                             <span class="font-acier fs-work-title-sm">{{work.title_1}} </span>
-                            <span class="font-acier fs-work-title-sm pink">&nbsp;{{ work.separator }}&nbsp;</span> 
-                            <span class="font-acier fs-work-title-lg">{{work.title_2}}</span>
+                            {% if work.title_2 != '' %}
+                                <span class="font-acier fs-work-title-sm pink">&nbsp;{{ work.separator }}&nbsp;</span> 
+                                <span class="font-acier fs-work-title-lg">{{work.title_2}}</span>
+                            {% endif %}
                         </p>
                     </div>
                 </div>

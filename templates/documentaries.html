@@ -33,7 +33,7 @@
         <div class = 'main-background'>
             
                 <div class="wrapper-v">
-                    <video  class="background-v" src="{{ work.video }}" autoplay muted loop></video>
+                    <video  class="background-v" src="{{ work.video }}" autoplay muted loop id='background-v'></video>
                 </div>
                 <div class="{{ class_title }}" name='{{ work.video_embed }}'>
                     <a>{{ work.title_1 }}</a>
@@ -51,6 +51,13 @@
     <!-- NAVIGATION -->
     <div class='main-wrapper-nav'>
         <div class='wrapper-nav' id='nav'>
+            <button class="menu-button" role="button">
+                <span class="burger">
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                </span>
+            </button>
             <div class='nav links-left'>
                 <a class="font-acier fs-nav-links" href="{{ url_for('home') }}">HOME</a>
                 <a class="font-acier fs-nav-links" href="{{ url_for('commercials') }}">COMMERCIALS</a>
@@ -58,16 +65,56 @@
             </div>
             <div class="cross">
                     <img class='cross-name' src="{{ url_for('static', filename='img/cross-pink.png') }}" id="cross">
-                    <a class="cross-name font-ambidexter fs-name-s" id='filter-doc'></a>
+                    <a class="cross-name font-ambidexter fs-name-s opac-filter-name" id='filter-doc'>DOCUMENTARIES</a>
             </div>
             <div class='nav links-right'>
                 <a class="font-acier fs-nav-links" href="{{ url_for('short-films') }}">SHORT FILMS</a>
                 <a class="font-acier fs-nav-links pink" href="{{ url_for('documentaries') }}">DOCUMENTARIES</a>
                 <a class="font-acier fs-nav-links" href="{{ url_for('dop-works') }}">DOP WORKS</a>
             </div>
+            <button class="menu-button" role="button">
+                <span class="burger">
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                </span>
+            </button>
         </div>
     </div>
-
+    <!-- MOBILE MENU -->
+    <div class='menu'>
+        <div class='menu-wrapper black'>
+            <div class='menu-header'>
+                <div class='wrapper-nav'>
+                    <button class="close-button" role="button">
+                        <span class="burger">
+                            <span class="burger-bar"></span>
+                            <span class="burger-bar"></span>
+                            <span class="burger-bar"></span>
+                        </span>
+                    </button>
+                    <div class="cross">
+                        <a class="cross-name font-ambidexter fs-name-s name-not-fixed" id='filter-name'>DOCUMENTARIES</a>
+                    </div>
+                    <button class="close-button" role="button">
+                        <span class="burger">
+                            <span class="burger-bar"></span>
+                            <span class="burger-bar"></span>
+                            <span class="burger-bar"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="menu-links">
+                <a class="font-acier fs-nav-links" href="{{ url_for('home') }}">HOME</a>
+                <a class="font-acier fs-nav-links" href="{{ url_for('commercials') }}">COMMERCIALS</a>
+                <a class="font-acier fs-nav-links" href="{{ url_for('music-videos') }}">MUSIC VIDEOS</a>
+                <a class="font-acier fs-nav-links" href="{{ url_for('short-films') }}">SHORT FILMS</a>
+                <a class="font-acier fs-nav-links pink" href="{{ url_for('documentaries') }}">DOCUMENTARIES</a>
+                <a class="font-acier fs-nav-links" href="{{ url_for('dop-works') }}">DOP WORKS</a>
+            </div>
+        </div>
+    </div>
 </div>
      <!-- FOOTER -->
     <div class="footer-wrapper">

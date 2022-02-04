@@ -69,3 +69,45 @@
 .video-b {
     font-size: 2.5vw;
 }
+
+@media all 
+and (max-device-width: 812px) 
+and (orientation:portrait) 
+and (-webkit-min-device-pixel-ratio: 2)
+{
+    .main-background {
+        height: 100vh;
+    }
+    .works-view {
+        width: 100%;
+    }
+
+    .music {
+        display: flex;
+        top: 93vh;
+        width: 100%;
+        left: 2vw;
+        justify-content: center;
+    }
+
+    .music-s {
+        font-size: 8vw;
+    }
+    .music-b {
+        font-size: 8vw;
+    }
+    .video-name {
+        width: 85vw;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .video-s {
+        font-size: 5vw;
+        line-height: 5vw;
+    }
+    .video-b {
+        font-size: 5vw;
+        line-height: 5vw;
+    }
+}

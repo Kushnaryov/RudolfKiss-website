@@ -134,7 +134,7 @@ iframe {
     transform: translateY(-50%) translateX(-50%);
     z-index: 100;
     width: 85vw;
-    height: 70vh;
+    height: 80vh;
 }
 
 .iframe-wrapper {
@@ -168,5 +168,8 @@ and (-webkit-min-device-pixel-ratio: 2)
     .works-container {
         margin-top: 0;
         gap: 0;
+    }
+    iframe {
+        height: 30vh;
     }
 }
