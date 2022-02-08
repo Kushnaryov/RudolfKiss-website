@@ -38,7 +38,7 @@
 
 .cross-name-wrapper {
     display: flex;
-    width: 90%;
+    width: 75%;
     height: 100%;
     position: absolute;
     transform: translateY(5vh);
