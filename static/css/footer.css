@@ -1,3 +1,8 @@
+.footer-wrapper {
+    margin: 20px 0 20px 0;
+}
+
+
 .footer {
     display: flex;
     background-color: inherit;

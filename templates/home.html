@@ -21,12 +21,12 @@
             <video class="background-v lazy" src="{{ background.video }}" playsinline autoplay muted preload="none" loop id='background-v'></video>
         </div>
         <div class='Rudolf font-ambidexter'>
-            <span class="fs-name-s pink">RUDOLF</span>
-            <span class="fs-name-b">KISS</span>
+            <div class="fit-size pink">RUDOLF</div>
+            <div class="fit-size">KISS</div>
         </div>
         <div class='Director font-acier'>
-            <span class="fs-pos-b">DIRECTOR/</span>
-            <span class="fs-pos-s">CINEMATOGRAPHER</span>
+            <span class="fit-size stroke">DIRECTOR/</span>
+            <span class="fit-size">CINEMATOGRAPHER</span>
         </div>
     </div>
 
@@ -47,8 +47,12 @@
                 <a class="font-acier fs-nav-links" href="{{ url_for('music-videos') }}">MUSIC VIDEOS</a>
             </div>
             <div class="cross">
-                <img class='cross-name cross-not-fixed' src="{{ url_for('static', filename='img/cross-pink.png') }}" id="cross">
-                <a class="cross-name font-ambidexter fs-name-s name-not-fixed" id='filter-name'>NEW STUFF</a>
+                <div class="cross-wrapper">
+                    <img class="cross-show" src="{{ url_for('static', filename='img/cross-pink.png') }}" id="cross">
+                </div>
+                <div class="cross-name-wrapper" id='filter-name'>
+                    <a class="cross-name font-ambidexter fs-name-s fit-size" >NEW STUFF</a>
+                </div>
             </div>
             <div class='nav links-right'>
                 <a class="font-acier fs-nav-links" href="{{ url_for('short-films') }}">SHORT FILMS</a>
@@ -144,7 +148,7 @@
             </div>
         </div>
         <div class="name-logo">
-            <img class="name-image" src="{{ url_for('static', filename='img/name.webp') }}">
+            <img class="name-image" src="{{ url_for('static', filename='img/name.png') }}">
         </div>
     </div>
     <!-- MARQUEE -->
@@ -193,7 +197,24 @@
     </div>
 
 {% endblock %}
-{% block content_extra %}
+<!-- {% block content_extra %}
+<script>
+    $(document).ready(function () {
+        fitty('.fit-size')
+        $("#background-v").on('play', function () {
+            fitty('.fit-size')
+            $('.fit-size').each (function (){
+                $(this).css('lineHeight', parseInt($(this).css('fontSize'))*0.8+'px')
+            });
+        });
+        $(window).resize(function () { 
+            fitty('.fit-size')
+            $('.fit-size').each (function (){
+                $(this).css('lineHeight', parseInt($(this).css('fontSize'))*0.8+'px')
+            });
+        });
+    });
+</script> -->
 {% block videos %}
 {% endblock videos %}
 {% endblock content_extra %}

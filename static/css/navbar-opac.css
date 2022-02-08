@@ -10,6 +10,30 @@
 
 }
 
+.cross-show {
+    height: 34vh;
+    width: auto;
+    transition: all .2s ease-in-out;
+}
+
+.cross-hide {
+    opacity: 0;
+    height: 0.1vh;
+    transition: all .2s ease-in-out;
+}
+
+.cross-name-wrapper {
+    opacity: 0;
+    display: flex;
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s ease-in-out;
+}
+
+
 .cross-name {
     color: white;
     position: absolute;
@@ -19,6 +43,13 @@
     width: max-content;
 }
 
+.cross-name-transform {
+    opacity: 1;
+    transform: translateY(0vh);
+    align-items: center;
+    transition: all .2s ease-in-out;
+    width: 90%;
+}
 
 #cross {
     height: 15vw;
@@ -46,7 +77,7 @@
     align-content: center;
     justify-content: space-between;
     transition: all .1s ease-in-out;
-    /* background-color: black; */
+    /* background-color: #131313; */
     /* border-bottom: #fdbebe 1px; */
     align-items: center;
 }
@@ -72,7 +103,7 @@
     position: fixed;
     top: 0;
     height: 100px;
-    background-color: black;
+    background-color: #131313;
     
 }
 
@@ -85,7 +116,7 @@
     margin-bottom: 50px;
     transition: all .3s ease-in-out;
     height: 100px;
-    background-color: black;
+    background-color: #131313;
     z-index: 100;
 }
 
@@ -99,11 +130,16 @@
     padding: 0;
 }
 
+.menu-button {
+    opacity: 0;
+}
+
 @media all 
 and (max-device-width: 812px) 
 and (orientation:portrait) 
 and (-webkit-min-device-pixel-ratio: 2)
 {
+
     .wrapper-nav {
         /* display: none; */
         height: 10vh;
@@ -122,14 +158,18 @@ and (-webkit-min-device-pixel-ratio: 2)
     .cross-transf {
         transform: translateY(90px);
     }
-
+    .cross-name-wrapper {
+        opacity: 1;
+    }
     .cross-name {
+        opacity: 1;
         /* transform: translateY(-130%); */
         font-size: 8vw;
     }
 
     .cross-name-transform {
-        transform: translateY(-130%);
+        /* transform: translateY(-130%); */
+        width: 72%;
     }
 
     .menu-button{
@@ -224,7 +264,7 @@ and (-webkit-min-device-pixel-ratio: 2)
         position: fixed;
         height: 10vh;
         width: 100vw;
-        background-color: black;
+        background-color: #131313;
         -webkit-transition: -webkit-transform .3s ease-in-out;
         transition: -webkit-transform .3s ease-in-out;
         transition: all .3s ease-in-out;
@@ -251,7 +291,7 @@ and (-webkit-min-device-pixel-ratio: 2)
     }
 
     .menu-wrapper {
-        background-color: black;
+        background-color: #131313;
         opacity: 0.9;
     }
 }

@@ -27,7 +27,7 @@
     color: azure;
     position: absolute;
     top: 50vh;
-    left: 5vw;
+    left: 9vw;
     transform: translateY(-50%);
     z-index: 20;
     width: fit-content;
@@ -55,7 +55,7 @@
     position: absolute;
     justify-content: flex-end;
     top: 48vh;
-    right: 5vw;
+    right: 9vw;
     z-index: 20;
     flex-wrap: wrap;
     white-space: nowrap;
@@ -82,12 +82,14 @@ and (-webkit-min-device-pixel-ratio: 2)
         width: 100%;
     }
 
+
     .music {
-        display: flex;
+        opacity: 0;
+        /* display: flex;
         top: 93vh;
         width: 100%;
         left: 2vw;
-        justify-content: center;
+        justify-content: center; */
     }
 
     .music-s {

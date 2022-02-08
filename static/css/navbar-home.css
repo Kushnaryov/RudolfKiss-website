@@ -3,32 +3,54 @@
     display: flex;
     flex-wrap: nowrap;
     width: 25%;
+    height: 100%;
     justify-content: center;
-    transform: translateY(93px);
+    /* transform: translateY(93px); */
     z-index: 60;
-    align-items: center;
+    /* align-items: center; */
 }
 
-#cross {
+.cross-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%);
+    /* transition: all .2s ease-in-out; */
+}
+
+.cross-show {
     height: 34vh;
     width: auto;
     transition: all .2s ease-in-out;
 }
 
+.cross-hide {
+    opacity: 0;
+    height: 0.1vh;
+    transition: all .2s ease-in-out;
+}
+
 .cross-name {
     color: white;
-    position: absolute;
+}
+
+.cross-name-wrapper {
     display: flex;
-    align-content: center;
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    transform: translateY(5vh);
+    justify-content: center;
+    align-items: flex-end;
+    transition: all .2s ease-in-out;
+}
+
+.cross-name-transform {
+    transform: translateY(0vh);
     align-items: center;
-}
-
-.cross-not-fixed {
-    transform: translateY(-58%);
-}
-
-.name-not-fixed {
-    transform: translateY(30%);
+    transition: all .2s ease-in-out;
 }
 
 .wrapper-nav {
@@ -43,7 +65,7 @@
     align-content: center;
     justify-content: space-between;
     transition: all .1s ease-in-out;
-    background-color: black;
+    background-color: #131313;
     border-bottom: #fdbebe 1px;
     align-items: center;
 }
@@ -63,11 +85,11 @@
 }
 
 .links-left {
-    margin-left: 5vw;
+    margin-left: 8vw;
 }
 
 .links-right {
-    margin-right: 5vw;
+    margin-right: 8vw;
 }
 
 .fixed {
@@ -78,6 +100,7 @@
 
 .cross-transf {
     transform: translateY(0px);
+    transition: all .2s ease-in-out;
 }
 
 .filter-title {
@@ -113,7 +136,7 @@
 
 @media all 
 and (max-device-width: 812px) 
-and (orientation:portrait) 
+/* and (orientation:portrait)  */
 and (-webkit-min-device-pixel-ratio: 2)
 {
     .wrapper-nav {
@@ -128,16 +151,20 @@ and (-webkit-min-device-pixel-ratio: 2)
     .cross {
         width: 100%;
         height: 100%;
-    }
-    
-    .cross-transf {
-        transform: translateY(90px);
+        align-items: center;
     }
 
     .cross-name {
-        transform: translateY(-130%);
         font-size: 80px;
     }
+
+    .cross-name-wrapper {
+        width: 62%;
+        transform: translateY(0vh);
+        align-items: center;
+    }
+
+
     .menu-button{
         display: block;
         opacity: 0;
@@ -230,7 +257,7 @@ and (-webkit-min-device-pixel-ratio: 2)
         position: fixed;
         height: 10vh;
         width: 100vw;
-        background-color: black;
+        background-color: #131313;
         -webkit-transition: -webkit-transform .3s ease-in-out;
         transition: -webkit-transform .3s ease-in-out;
         transition: all .3s ease-in-out;
@@ -257,7 +284,7 @@ and (-webkit-min-device-pixel-ratio: 2)
     }
 
         .menu-wrapper {
-            background-color: black;
+            background-color: #131313;
             opacity: 0.9;
         }
 }

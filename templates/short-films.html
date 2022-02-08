@@ -47,8 +47,12 @@
                 <a class="font-acier fs-nav-links" href="{{ url_for('music-videos') }}">MUSIC VIDEOS</a>
             </div>
             <div class="cross">
-                    <img class='cross-name' src="{{ url_for('static', filename='img/cross-pink.png') }}" id="cross">
-                    <a class="cross-name font-ambidexter fs-name-s opac-filter-name" id='filter-shf'>SHORT FILMS</a>
+                <div class="cross-wrapper">
+                    <img class="cross-show" src="{{ url_for('static', filename='img/cross-pink.png') }}" id="cross">
+                </div>
+                <div class="cross-name-wrapper">
+                    <a class="cross-name font-ambidexter fs-name-s fit-size" id='filter-shf'>SHORT FILMS</a>
+                </div>
             </div>
             <div class='nav links-right'>
                 <a class="font-acier fs-nav-links pink" href="{{ url_for('short-films') }}">SHORT FILMS</a>
@@ -77,7 +81,7 @@
                         </span>
                     </button>
                     <div class="cross">
-                        <a class="cross-name font-ambidexter fs-name-s name-not-fixed" id='filter-name'>SHORT FILMS</a>
+                        <a class="cross-name font-ambidexter fs-name-s name-not-fixed fit-size" id='filter-name'>SHORT FILMS</a>
                     </div>
                     <button class="close-button" role="button">
                         <span class="burger">
@@ -119,7 +123,7 @@
             </div>
         </div>
         <div class="name-logo">
-            <img class="name-image" src="{{ url_for('static', filename='img/name.webp') }}">
+            <img class="name-image" src="{{ url_for('static', filename='img/name.png') }}">
         </div>
     </div>
     <!-- MARQUEE -->
