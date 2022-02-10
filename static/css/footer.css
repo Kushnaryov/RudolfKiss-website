@@ -75,7 +75,7 @@
 }
 
 .marquee {
-    position: relative;
+    position: absolute;
     background-color: #fdbebe;
     z-index: 10;
     height: 5vh;
