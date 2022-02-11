@@ -6,7 +6,7 @@
 
 
 .works-container {
-    margin-top: 100px;
+    margin-top: 80px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 50px;
