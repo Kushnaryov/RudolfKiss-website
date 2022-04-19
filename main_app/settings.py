@@ -15,8 +15,8 @@ app_dir = os.path.realpath(os.path.dirname(__file__))
 DEV_DB_URI = 'postgresql://postgres:joydivision32@localhost/RudolfKiss'
 PROD_DB_URI = os.getenv('HEROKU_PROD_DB_URI')
 
-S3_BUCKET = 'rudolfkiss.com'
-S3_REGION = 'eu-central-1'
+S3_BUCKET = os.getenv('S3_BUCKET')
+S3_REGION = os.getenv('S3_REGION')
 S3_KEY = os.getenv('AWS_ACCES_KEY')
 S3_SECRET = os.getenv('AWS_ACCES_SECRET')
 
